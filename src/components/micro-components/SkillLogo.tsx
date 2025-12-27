@@ -15,16 +15,16 @@ const SkillLogo = ({ imgSrc }: { imgSrc: string }) => {
     });
 
     gsap.set(glossRef.current, {
-      rotateZ: 45,
-      translateY: 50,
-      translateX: 20,
+      rotateZ: 50,
+      translateY: 25,
+      translateX: 30,
       opacity: 1,
       overwrite: true,
     });
 
     gsap.to(glossRef.current, {
       duration: 1,
-      x: -100,
+      x: -65,
       ease: "power2.out",
       overwrite: true,
     });
@@ -38,21 +38,21 @@ const SkillLogo = ({ imgSrc }: { imgSrc: string }) => {
       rotation: 12,
       duration: 0.1,
       ease: "power2.out",
-      onStart: () => {
-        gsap.set(glossRef.current, { opacity: 0 });
-      },
     })
       .to(itemRef.current, {
+        y: 0,
         rotation: -8,
         duration: 0.15,
         ease: "power1.inOut",
       })
       .to(itemRef.current, {
+        y: 0,
         rotation: 4,
         duration: 0.12,
         ease: "power1.inOut",
       })
       .to(itemRef.current, {
+        y: 0,
         rotation: 0,
         duration: 0.2,
         ease: "elastic.out(1, 0.4)",
@@ -68,7 +68,7 @@ const SkillLogo = ({ imgSrc }: { imgSrc: string }) => {
         bg-white/5
         backdrop-blur-md w-fit m-4 flex p-2 overflow-hidden"
     >
-      <img src={imgSrc} alt="skill logo" className="z-10 relative h-20 w-20" />
+      <img src={imgSrc} alt="skill logo" className="z-10 relative h-10 w-10" />
       <span
         ref={glossRef}
         className=" z-0 absolute inset-0
@@ -80,7 +80,8 @@ const SkillLogo = ({ imgSrc }: { imgSrc: string }) => {
                     to-transparent
                     opacity-0
                     pointer-events-none
-                    -translate-x-full"
+                    -translate-x-full
+                    translate-y-199"
       />
     </div>
   );

@@ -10,14 +10,14 @@ const ExperienceCard = ({
   projectName,
   description,
   skills,
-  imageSrc,
+  imgSrc,
 }: {
   companyName: string;
   timeline: string;
   projectName: string;
   description: string[];
   skills: string[];
-  imageSrc: string;
+  imgSrc: string;
 }) => {
   const companyRef = useRef<HTMLDivElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
@@ -88,7 +88,7 @@ const ExperienceCard = ({
         </div>
       </div>
       <div ref={idCardRef} className="flex-1 flex justify-center items-center">
-        <IdCard imageSrc={imageSrc} />
+        <IdCard imgSrc={imgSrc} />
       </div>
     </div>
   );
