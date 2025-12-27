@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-quicksand: "Quicksand", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-quicksand flex justify-center min-h-dvh w-full /*bg-[#946BFF]*/ bg-linear-to-br text-white from-gray-600 from-20% via-gray-900 via-50% 
+    to-black to-100% overflow-x-hidden;
+  }
+  #root {
+    @apply w-full;
+  }
+}
+
+.game-card__gloss {
+  position: absolute;
+  inset: 0;
+  height: 120%;
+  background: linear-gradient(
+    226deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.4) 35%,
+    rgba(255, 255, 255, 0.2) 42%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  pointer-events: none;
+}
