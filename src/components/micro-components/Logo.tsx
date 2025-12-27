@@ -98,7 +98,7 @@ export default function BoltFillGlow({
             dx="0"
             dy="4"
             stdDeviation="8"
-            flood-color="rgba(0,0,0,0.5)"
+            floodColor="rgba(0,0,0,0.5)"
           />
         </filter>
       </defs>
