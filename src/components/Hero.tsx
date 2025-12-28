@@ -4,21 +4,21 @@ import gsap from "gsap";
 import Button from "./micro-components/Button";
 import { SplitText } from "gsap/SplitText";
 
-const Hero = () => {
-  const skills = [
-    "JavaScript",
-    "TypeScript",
-    "React.js",
-    "Node.js",
-    "GSAP",
-    "Micro Services",
-    "Docker",
-    "Github",
-    "Kubernetes",
-    "Redis",
-    "mongoDB",
-  ];
+const skills = [
+  "JavaScript",
+  "TypeScript",
+  "React.js",
+  "Node.js",
+  "GSAP",
+  "Micro Services",
+  "Docker",
+  "Github",
+  "Kubernetes",
+  "Redis",
+  "mongoDB",
+];
 
+const Hero = () => {
   const showSkillRef = useRef<HTMLHeadingElement>(null);
   const [showSkill, setShowSkill] = useState(skills[0]);
 
