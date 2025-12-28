@@ -5,6 +5,7 @@ import github from "/assets/logos/github.svg";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Gloss from "../../effects/Gloss";
 
 const ProjectCard = ({
   imgSrc,
@@ -33,7 +34,7 @@ const ProjectCard = ({
         trigger: imageRef.current,
         scrub: true,
         start: "top bottom",
-        end: "+=500",
+        end: "+=30%",
       },
     });
 
@@ -47,7 +48,7 @@ const ProjectCard = ({
           trigger: imageRef.current,
           scrub: true,
           start: "top bottom",
-          end: "+=500",
+          end: "+=40%",
         },
       })
       .from(headingRef.current, {
@@ -74,6 +75,7 @@ const ProjectCard = ({
         className="h-full flex-1 w-full -me-25 -translate-x-[25%] rounded-xl shadow-md overflow-hidden"
       >
         <img src={imgSrc} alt="project image" />
+        <Gloss />
       </div>
       <div className="min-h-125 flex-1 w-full py-5 pe-5">
         <h2 ref={headingRef} className="text-3xl mb-3">

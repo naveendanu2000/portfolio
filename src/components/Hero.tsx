@@ -151,14 +151,14 @@ const Hero = () => {
     () => {
       gsap.registerPlugin(ScrollTrigger);
       gsap.from(imgRef.current, {
-        y: -200,
+        y: -100,
         opacity: 0,
         duration: 1,
         ease: "power1.inOut",
       });
 
       gsap.to(imgRef.current, {
-        y: -200,
+        y: -100,
         opacity: 0,
         immediateRender: false,
         scrollTrigger: {
@@ -173,7 +173,7 @@ const Hero = () => {
   );
 
   return (
-    <div className="relative w-dvw h-[80%] p-10 flex flex-row justify-center">
+    <div className="relative w-dvw h-[80%] p-10 flex flex-row justify-center mx-5">
       <div className="w-full lg:h-140 xl:h-170 md:h-100 flex flex-1 items-end px-[8%] xl:px-[10%]">
         <div className="flex-1 h-fit" ref={leftHeroRef}>
           <h2 className="text-4xl xl:text-5xl">Naveen Danu</h2>

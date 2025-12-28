@@ -35,7 +35,7 @@ const ExperienceCard = ({
           trigger: experienceCardRef.current,
           scrub: true,
           start: "top bottom",
-          end: "+=600",
+          end: "+=30%",
         },
       })
       .from(companyRef.current, {
@@ -69,7 +69,12 @@ const ExperienceCard = ({
       x: "50%",
       opacity: 0,
       duration: 1.5,
-      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: idCardRef.current!.children,
+        scrub: true,
+        start: "top bottom",
+        end: "+=30%",
+      },
     });
   });
 

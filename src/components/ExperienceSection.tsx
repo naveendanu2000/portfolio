@@ -16,7 +16,6 @@ const ExperienceSection = () => {
       y: 100,
       scale: 0.8,
       opacity: 0,
-      immediateRender: false,
       scrollTrigger: {
         trigger: headingRef.current,
         scrub: true,
@@ -29,7 +28,6 @@ const ExperienceSection = () => {
       y: 100,
       scale: 0.8,
       opacity: 0,
-      immediateRender: false,
       stagger: 1,
       scrollTrigger: {
         trigger: experienceSectionRef.current,
