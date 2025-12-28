@@ -9,13 +9,13 @@ const skills = [
   "TypeScript",
   "React.js",
   "Node.js",
+  "mongoDB",
   "GSAP",
   "Micro Services",
   "Docker",
   "Github",
   "Kubernetes",
   "Redis",
-  "mongoDB",
 ];
 
 const Hero = () => {
@@ -32,7 +32,7 @@ const Hero = () => {
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
 
-    const maxRotate = 6;
+    const maxRotate = 8;
 
     const rotateY = (x / (rect.width / 2)) * maxRotate;
     const rotateX = -(y / (rect.height / 2)) * maxRotate;
@@ -52,15 +52,27 @@ const Hero = () => {
 
     const split = new SplitText(el, { type: "chars" });
 
-    gsap.from(split.chars, {
-      x: 100,
-      rotateY: 1440,
-      opacity: 0,
-      autoAlpha: 0,
-      duration: 0.6,
-      stagger: 0.05,
-      ease: "power1.inOut",
-    });
+    gsap
+      .timeline({})
+      .from(split.chars, {
+        x: 100,
+        rotateY: 1440,
+        opacity: 0,
+        autoAlpha: 0,
+        duration: 0.5,
+        stagger: 0.05,
+        ease: "power1.inOut",
+      })
+      .to(split.chars, {
+        x: 100,
+        rotateY: 1440,
+        opacity: 0,
+        delay: 0.8,
+        autoAlpha: 0,
+        duration: 0.3,
+        stagger: 0.03,
+        ease: "power1.inOut",
+      });
 
     return () => {
       split.revert();
