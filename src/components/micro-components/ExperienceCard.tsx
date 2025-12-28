@@ -35,7 +35,7 @@ const ExperienceCard = ({
           trigger: experienceCardRef.current,
           scrub: true,
           start: "top bottom",
-          end: "top center",
+          end: "+=600",
         },
       })
       .from(companyRef.current, {

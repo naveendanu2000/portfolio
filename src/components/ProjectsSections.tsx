@@ -1,13 +1,13 @@
-import { useRef } from "react";
-import { experienceCard } from "../data/data";
-import ExperienceCard from "./micro-components/ExperienceCard";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import { useRef } from "react";
+import { projectCard } from "../data/data";
+import ProjectCard from "./micro-components/ProjectCard";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-const ExperienceSection = () => {
-  const experienceSectionRef = useRef<HTMLDivElement>(null);
+const ProjectsSections = () => {
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const projectSectionRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -25,14 +25,14 @@ const ExperienceSection = () => {
       },
     });
 
-    gsap.from(experienceSectionRef.current!.children, {
+    gsap.from(projectSectionRef.current!.children, {
       y: 100,
       scale: 0.8,
       opacity: 0,
       immediateRender: false,
       stagger: 1,
       scrollTrigger: {
-        trigger: experienceSectionRef.current,
+        trigger: projectSectionRef.current,
         scrub: true,
         start: "top bottom",
         end: "center center",
@@ -41,21 +41,17 @@ const ExperienceSection = () => {
   });
 
   return (
-    <div className="mx-5 py-[2%] min-h-screen ">
+    <div className="mx-5 py-[2%] min-h-screen">
       <h1 ref={headingRef} className="text-6xl mb-[4%] text-center">
-        {" "}
-        EXPERIENCE{" "}
+        Projects
       </h1>
-      <div ref={experienceSectionRef} className="mx-5">
-        {experienceCard.map((card) => (
-          <ExperienceCard
-            key={card.companyName}
-            companyName={card.companyName}
+      <div ref={projectSectionRef} className="mx-5">
+        {projectCard.map((card) => (
+          <ProjectCard
             imgSrc={card.imgSrc}
-            timeline={card.timeline}
-            projectName={card.projectName}
+            heading={card.heading}
             description={card.description}
-            skills={card.skills}
+            link={card.link}
           />
         ))}
       </div>
@@ -63,4 +59,4 @@ const ExperienceSection = () => {
   );
 };
 
-export default ExperienceSection;
+export default ProjectsSections;

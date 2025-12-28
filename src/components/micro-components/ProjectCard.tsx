@@ -31,7 +31,9 @@ const ProjectCard = ({
       duration: 0.65,
       scrollTrigger: {
         trigger: imageRef.current,
+        scrub: true,
         start: "top bottom",
+        end: "+=500",
       },
     });
 
@@ -43,7 +45,9 @@ const ProjectCard = ({
       .timeline({
         scrollTrigger: {
           trigger: imageRef.current,
+          scrub: true,
           start: "top bottom",
+          end: "+=500",
         },
       })
       .from(headingRef.current, {
@@ -71,9 +75,11 @@ const ProjectCard = ({
       >
         <img src={imgSrc} alt="project image" />
       </div>
-      <div className="h-125 flex-1 w-full py-5 pe-5">
-        <h2 ref={headingRef}>{heading}</h2>
-        <p ref={descriptionRef} className="mb-5">
+      <div className="min-h-125 flex-1 w-full py-5 pe-5">
+        <h2 ref={headingRef} className="text-3xl mb-3">
+          {heading}
+        </h2>
+        <p ref={descriptionRef} className="mb-3 text-xl">
           {description}
         </p>
         <button ref={buttonRef} className="relative cursor-pointer">
