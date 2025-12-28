@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import Navbar from "./Navbar";
-import Button from "./micro-components/Button";
 import Logo from "./micro-components/Logo";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
