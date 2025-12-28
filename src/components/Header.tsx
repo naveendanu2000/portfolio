@@ -37,8 +37,7 @@ const Header = () => {
         ref={rightDivRef}
         className=" md:flex-2 flex-3 flex justify-center items-center"
       >
-        <Button text="Login" />
-        <Button text="Sign up" />
+
       </div>
     </div>
   );
