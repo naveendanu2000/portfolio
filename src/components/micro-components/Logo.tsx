@@ -65,7 +65,7 @@ export default function BoltFillGlow({
       xmlns="http://www.w3.org/2000/svg"
       className="cursor-pointer"
     >
-      <path d={boltPath} className="fill-indigo-300" filter="url(#shadow)"/>
+      <path d={boltPath} className="fill-indigo-400" filter="url(#shadow)"/>
 
       <path
         d={boltPath}

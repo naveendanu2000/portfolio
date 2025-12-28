@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import SkillLogo from "./micro-components/SkillLogo";
+import SkillLogo from "./SkillLogo";
 import github from "/assets/logos/github.svg";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";

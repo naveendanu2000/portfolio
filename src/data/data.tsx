@@ -15,6 +15,38 @@ export const experienceCard = [
       "/assets/logos/github.svg",
     ],
   },
+  {
+    imgSrc: "/assets/ID-Cards/id_accenture.png",
+    companyName: "Accenture",
+    timeline: "Sep, 24 - Oct, 25",
+    description: [
+      "Trained in MERN stack.",
+      "Hands on experience in developing optimized and responsive Components",
+      "Integrated rest APIs and JWT Authentication",
+    ],
+    projectName: "Hilton",
+    skills: [
+      "/assets/logos/react.svg",
+      "/assets/logos/initial.svg",
+      "/assets/logos/github.svg",
+    ],
+  },
+  {
+    imgSrc: "/assets/ID-Cards/id_accenture.png",
+    companyName: "Accenture",
+    timeline: "Sep, 24 - Oct, 25",
+    description: [
+      "Trained in MERN stack.",
+      "Hands on experience in developing optimized and responsive Components",
+      "Integrated rest APIs and JWT Authentication",
+    ],
+    projectName: "Hilton",
+    skills: [
+      "/assets/logos/react.svg",
+      "/assets/logos/initial.svg",
+      "/assets/logos/github.svg",
+    ],
+  },
 ];
 
 export const projectCard = [

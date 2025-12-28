@@ -3,24 +3,28 @@ import { useEffect, useRef, useState, type MouseEvent } from "react";
 import gsap from "gsap";
 import Button from "./micro-components/Button";
 import { SplitText } from "gsap/SplitText";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const skills = [
-  "JavaScript",
-  "TypeScript",
-  "React.js",
-  "Node.js",
-  "mongoDB",
-  "GSAP",
-  "Micro Services",
-  "Docker",
-  "Github",
-  "Kubernetes",
-  "Redis",
+  "greatness",
+  "strength",
+  "resilience",
+  "excellence",
+  "mastery",
+  "potential",
+  "character",
+  "impact",
+  "innovation",
 ];
 
 const Hero = () => {
   const showSkillRef = useRef<HTMLHeadingElement>(null);
+  const leftHeroRef = useRef<HTMLDivElement>(null);
+  const rightHeroRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
   const [showSkill, setShowSkill] = useState(skills[0]);
+  gsap.registerPlugin(ScrollTrigger);
 
   const onMouseMove = (e: MouseEvent<HTMLImageElement>) => {
     console.log(e.clientX, e.clientY);
@@ -91,32 +95,118 @@ const Hero = () => {
     };
   }, []);
 
+  useGSAP(
+    () => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from(leftHeroRef.current!.children, {
+        y: 100,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 0.8,
+        ease: "power1.inOut",
+      });
+
+      gsap.to(leftHeroRef.current!.children, {
+        x: -100,
+        opacity: 0,
+        immediateRender: false,
+        scrollTrigger: {
+          scrub: true,
+          trigger: leftHeroRef.current,
+          start: "top top",
+          end: "bottom top",
+        },
+      });
+    },
+    { scope: leftHeroRef }
+  );
+
+  useGSAP(
+    () => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from(rightHeroRef.current, {
+        y: 100,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 1,
+        ease: "power1.inOut",
+      });
+
+      gsap.to(rightHeroRef.current, {
+        x: 100,
+        opacity: 0,
+        immediateRender: false,
+        scrollTrigger: {
+          scrub: true,
+          trigger: rightHeroRef.current,
+          start: "top top",
+          end: "bottom top",
+        },
+      });
+    },
+    { scope: rightHeroRef }
+  );
+
+  useGSAP(
+    () => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from(imgRef.current, {
+        y: -200,
+        opacity: 0,
+        duration: 1,
+        ease: "power1.inOut",
+      });
+
+      gsap.to(imgRef.current, {
+        y: -200,
+        opacity: 0,
+        immediateRender: false,
+        scrollTrigger: {
+          scrub: true,
+          trigger: imgRef.current,
+          start: "bottom center",
+          end: "bottom top",
+        },
+      });
+    },
+    { scope: imgRef }
+  );
+
   return (
-    <div className="relative w-dvw h-fit p-10 flex flex-row justify-center">
-      <div className="flex-1 px-[8%] py-[2%]">
-        <h2 className="text-4xl">Naveen Danu</h2>
-        <h1 className="text-[3.3rem]">Frontend Developer</h1>
-        <h3 className="text-3xl">
-          crafting <strong className="text-violet-300">interactive,</strong>
-          <br /> <strong className="text-violet-300">animation</strong> -{" "}
-          <strong className="text-violet-300">driven</strong> web experiences.
-        </h3>
-        <div className="mt-5 -mx-3">
-          <Button text="View Projects" />
+    <div className="relative w-dvw h-[80%] p-10 flex flex-row justify-center">
+      <div className="w-full lg:h-140 xl:h-170 md:h-100 flex flex-1 items-end px-[8%] xl:px-[10%]">
+        <div className="flex-1 h-fit" ref={leftHeroRef}>
+          <h2 className="text-4xl xl:text-5xl">Naveen Danu</h2>
+          <h1 className="text-[3.3rem] xl:text-7xl mt-2 text-violet-400">
+            Frontend Developer
+          </h1>
+          <h3 className="text-3xl xl:text-4xl mt-3">
+            crafting <strong className="text-violet-400">interactive</strong>,
+            <br /> <strong className="text-violet-400">animation</strong> -{" "}
+            <strong className="text-violet-400">driven</strong> web experiences.
+          </h3>
+          <div className="mt-5 -mx-3">
+            <Button text="View Projects" />
+          </div>
         </div>
       </div>
-      <div className="w-fit absolute">
+      <div ref={imgRef} className="w-fit absolute">
         <img
           src={photo}
-          className=" h-140 flex mx-auto"
+          className=" xl:h-170 lg:h-100 flex mx-auto"
           onMouseMove={onMouseMove}
         />
       </div>
-      <div className="inline-block bottom-0 flex-1 px-[8%] text-right py-[2%]">
-        <div>
-          <h1 ref={showSkillRef} className="text-7xl">
-            {showSkill}
-          </h1>
+      <div className="inline-block bottom-0 flex-1 px-[8%] xl:px-[10%] text-right py-[2%]">
+        <div ref={rightHeroRef} className="h-full">
+          <h2 className="md:text-6xl xl:text-7xl mb-8">
+            <p className="text-2xl mb-2">I believe</p>
+            <p className="text-red-700 mb-2">Challenges</p>
+            <p className=" mb-2">define</p>
+            <h1 ref={showSkillRef} className="text-violet-400">
+              {showSkill}
+            </h1>
+          </h2>
         </div>
       </div>
     </div>

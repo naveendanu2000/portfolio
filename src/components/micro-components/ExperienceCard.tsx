@@ -1,8 +1,9 @@
 import { useRef } from "react";
-import IdCard from "./micro-components/IdCard";
-import SkillLogo from "./micro-components/SkillLogo";
+import IdCard from "./IdCard";
+import SkillLogo from "./SkillLogo";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const ExperienceCard = ({
   companyName,
@@ -24,10 +25,19 @@ const ExperienceCard = ({
   const ulRef = useRef<HTMLUListElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
   const idCardRef = useRef<HTMLDivElement>(null);
+  const experienceCardRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
     gsap
-      .timeline()
+      .timeline({
+        scrollTrigger: {
+          trigger: experienceCardRef.current,
+          scrub: true,
+          start: "top bottom",
+          end: "top center",
+        },
+      })
       .from(companyRef.current, {
         y: "15%",
         opacity: 0,
@@ -64,23 +74,26 @@ const ExperienceCard = ({
   });
 
   return (
-    <div className="bg-black/5 backdrop-blur-xl rounded-xl w-[70%] flex flex-row justify-center items-center m-auto p-[3%]">
-      <div className="flex-2">
+    <div
+      ref={experienceCardRef}
+      className="bg-black/5 backdrop-blur-xl mb-5 rounded-xl w-[70%] flex flex-row justify-center items-center m-auto p-[3%]"
+    >
+      <div className="flex-2 xl:ps-[6%]">
         <div ref={companyRef}>
-          <h1 className="text-3xl">{companyName}</h1>
+          <h1 className="text-3xl xl:text-4xl">{companyName}</h1>
           <span>{timeline}</span>
         </div>
         <div className="p-[1%]">
-          <h3 ref={projectRef} className="text-xl">
+          <h3 ref={projectRef} className="text-2xl xl:text-3xl">
             {projectName}
           </h3>
-          <ul ref={ulRef} className="py-[0.5%]">
+          <ul ref={ulRef} className="py-[0.5%] xl:text-xl">
             {description.map((line) => (
               <li key={line}>{line}</li>
             ))}
           </ul>
         </div>
-        <h3 className="text-xl">Technologies</h3>
+        <h3 className="text-xl xl:text-3xl">Technologies</h3>
         <div ref={skillsRef} className="flex flex-row p-[1%] w-[60%}">
           {skills.map((skill) => (
             <SkillLogo key={skill} imgSrc={skill} />

@@ -66,7 +66,7 @@ const SkillLogo = ({ imgSrc }: { imgSrc: string }) => {
       onMouseLeave={handleLeave}
       className="rounded-full
         bg-white/5
-        backdrop-blur-md w-fit m-4 flex p-2 overflow-hidden"
+        backdrop-blur-md w-fit m-4 inline-flex p-2 overflow-hidden"
     >
       <img src={imgSrc} alt="skill logo" className="z-10 relative h-10 w-10" />
       <span
