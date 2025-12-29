@@ -48,14 +48,71 @@ export const achievementCard = [
     imgSrc: "",
     description: `Presented research name "Unveiling Dermatology: A Deep learning approach to detect skin diseases" at the second international CS Conference, 2024`,
   },
+  {
+    imgSrc: "",
+    description: `Presented research name "Unveiling Dermatology: A Deep learning approach to detect skin diseases" at the second international CS Conference, 2024`,
+  },
+  {
+    imgSrc: "",
+    description: `Presented research name "Unveiling Dermatology: A Deep learning approach to detect skin diseases" at the second international CS Conference, 2024`,
+  },
+  {
+    imgSrc: "",
+    description: `Presented research name "Unveiling Dermatology: A Deep learning approach to detect skin diseases" at the second international CS Conference, 2024`,
+  },
+  {
+    imgSrc: "",
+    description: `Presented research name "Unveiling Dermatology: A Deep learning approach to detect skin diseases" at the second international CS Conference, 2024`,
+  },
+  {
+    imgSrc: "",
+    description: `Presented research name "Unveiling Dermatology: A Deep learning approach to detect skin diseases" at the second international CS Conference, 2024`,
+  },
+  {
+    imgSrc: "",
+    description: `Presented research name "Unveiling Dermatology: A Deep learning approach to detect skin diseases" at the second international CS Conference, 2024`,
+  },
+  {
+    imgSrc: "",
+    description: `Presented research name "Unveiling Dermatology: A Deep learning approach to detect skin diseases" at the second international CS Conference, 2024`,
+  },
+  {
+    imgSrc: "",
+    description: `Presented research name "Unveiling Dermatology: A Deep learning approach to detect skin diseases" at the second international CS Conference, 2024`,
+  },
+  {
+    imgSrc: "",
+    description: `Achieved intermediate proficieny in MERN stack techleap exam at Accenture.`,
+  },
 ];
 
 export const educationCard = [
   {
     schoolName: "GEHU",
     certificate: "MCA",
-    cgpa: "8.98",
+    cgpa: "8.98 CGPA",
     timeline: "2024",
+    place: "Dehradun, India",
+  },
+  {
+    schoolName: "D.A.V pg college",
+    certificate: "BSC",
+    cgpa: "6.1 CGPA",
+    timeline: "2021",
+    place: "Dehradun, India",
+  },
+  {
+    schoolName: "S.G.N.P. School",
+    certificate: "Intermediate",
+    cgpa: "74%",
+    timeline: "2017",
+    place: "Dehradun, India",
+  },
+  {
+    schoolName: "S.G.N.P. School",
+    certificate: "Metric",
+    cgpa: "9.8 CGPA",
+    timeline: "2017",
     place: "Dehradun, India",
   },
 ];
@@ -96,7 +153,7 @@ export const skillsSection = {
     "/assets/logos/tensorflow.svg",
     "/assets/logos/pandas.svg",
     "/assets/logos/numpy.svg",
-  ]
+  ],
 };
 
 export const skillsSectionHeading = {
@@ -105,5 +162,5 @@ export const skillsSectionHeading = {
   webTechnologies: "Web Technologies",
   databases: "Databases",
   tools: "Tools",
-  machineLearning: "Machine Learning"
+  machineLearning: "Machine Learning",
 };

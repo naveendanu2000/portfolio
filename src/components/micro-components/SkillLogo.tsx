@@ -1,9 +1,31 @@
 import { useRef } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const SkillLogo = ({ imgSrc }: { imgSrc: string }) => {
   const itemRef = useRef<HTMLDivElement>(null);
   const glossRef = useRef<HTMLSpanElement>(null);
+
+  useGSAP(() => {
+    gsap.set(glossRef.current, {
+      rotateZ: 50,
+      translateY: 25,
+      translateX: 30,
+      opacity: 1,
+      repeat: -1,
+      repeatDelay:1.5,
+      delay: 1,
+    });
+
+    gsap.to(glossRef.current, {
+      duration: 1,
+      x: -65,
+      ease: "power2.out",
+      repeat: -1,
+      repeatDelay:1,
+      delay: 1,
+    });
+  });
 
   const handleEnter = () => {
     gsap.to(itemRef.current, {

@@ -1,5 +1,8 @@
+import AchievementsSection from "./components/AchievementsSection";
 import BackgroundAnimation from "./components/BackgroundAnimation";
+import EducationSection from "./components/EducationSection";
 import ExperienceSection from "./components/ExperienceSection";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ProjectsSections from "./components/ProjectsSections";
@@ -15,6 +18,9 @@ const App = () => {
         <ExperienceSection />
         <ProjectsSections />
         <SkillsSection />
+        <AchievementsSection />
+        <EducationSection />
+        <Footer />
       </div>
     </div>
   );
