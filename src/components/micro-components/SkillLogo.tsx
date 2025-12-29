@@ -12,6 +12,12 @@ const SkillLogo = ({ imgSrc }: { imgSrc: string }) => {
       duration: 0.2,
       ease: "power2.out",
       overwrite: true,
+      onStart() {
+        gsap.set(itemRef.current, {
+          y: 0,
+          opacity: 1,
+        });
+      },
     });
 
     gsap.set(glossRef.current, {
@@ -20,6 +26,12 @@ const SkillLogo = ({ imgSrc }: { imgSrc: string }) => {
       translateX: 30,
       opacity: 1,
       overwrite: true,
+      onStart() {
+        gsap.set(itemRef.current, {
+          y: 0,
+          opacity: 1,
+        });
+      },
     });
 
     gsap.to(glossRef.current, {
@@ -27,6 +39,12 @@ const SkillLogo = ({ imgSrc }: { imgSrc: string }) => {
       x: -65,
       ease: "power2.out",
       overwrite: true,
+      onStart() {
+        gsap.set(itemRef.current, {
+          y: 0,
+          opacity: 1,
+        });
+      },
     });
   };
 

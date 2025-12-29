@@ -98,14 +98,6 @@ const Hero = () => {
   useGSAP(
     () => {
       gsap.registerPlugin(ScrollTrigger);
-      gsap.from(leftHeroRef.current!.children, {
-        y: 100,
-        opacity: 0,
-        stagger: 0.2,
-        duration: 0.8,
-        ease: "power1.inOut",
-      });
-
       gsap.to(leftHeroRef.current!.children, {
         x: -100,
         opacity: 0,
@@ -117,21 +109,23 @@ const Hero = () => {
           end: "bottom top",
         },
       });
+
+      const rect = leftHeroRef.current!.getBoundingClientRect();
+      if (rect.top < 0) return;
+
+      gsap.from(leftHeroRef.current!.children, {
+        y: 100,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 0.8,
+        ease: "power1.inOut",
+      });
     },
     { scope: leftHeroRef }
   );
 
   useGSAP(
     () => {
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.from(rightHeroRef.current, {
-        y: 100,
-        opacity: 0,
-        stagger: 0.2,
-        duration: 1,
-        ease: "power1.inOut",
-      });
-
       gsap.to(rightHeroRef.current, {
         x: 100,
         opacity: 0,
@@ -143,6 +137,18 @@ const Hero = () => {
           end: "bottom top",
         },
       });
+
+      const rect = rightHeroRef.current!.getBoundingClientRect();
+      if (rect.top < 0) return;
+
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from(rightHeroRef.current, {
+        y: 100,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 1,
+        ease: "power1.inOut",
+      });
     },
     { scope: rightHeroRef }
   );
@@ -150,12 +156,6 @@ const Hero = () => {
   useGSAP(
     () => {
       gsap.registerPlugin(ScrollTrigger);
-      gsap.from(imgRef.current, {
-        y: -100,
-        opacity: 0,
-        duration: 1,
-        ease: "power1.inOut",
-      });
 
       gsap.to(imgRef.current, {
         y: -100,
@@ -167,6 +167,16 @@ const Hero = () => {
           start: "bottom center",
           end: "bottom top",
         },
+      });
+
+      const rect = imgRef.current!.getBoundingClientRect();
+      if (rect.top < 0) return;
+
+      gsap.from(imgRef.current, {
+        y: -100,
+        opacity: 0,
+        duration: 1,
+        ease: "power1.inOut",
       });
     },
     { scope: imgRef }

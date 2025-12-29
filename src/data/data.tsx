@@ -10,7 +10,7 @@ export const experienceCard = [
     ],
     projectName: "Hilton",
     skills: [
-      "/assets/logos/react.svg",
+      "/assets/logos/reactjs.svg",
       "/assets/logos/initial.svg",
       "/assets/logos/github.svg",
     ],
@@ -26,7 +26,7 @@ export const experienceCard = [
     ],
     projectName: "Hilton",
     skills: [
-      "/assets/logos/react.svg",
+      "/assets/logos/reactjs.svg",
       "/assets/logos/initial.svg",
       "/assets/logos/github.svg",
     ],
@@ -59,3 +59,51 @@ export const educationCard = [
     place: "Dehradun, India",
   },
 ];
+
+export const skillsSection = {
+  programmingLanguages: [
+    "/assets/logos/c.svg",
+    "/assets/logos/cpp.svg",
+    "/assets/logos/java.svg",
+    "/assets/logos/python.svg",
+    "/assets/logos/c.svg",
+  ],
+  coreWebTechnologies: [
+    "/assets/logos/html.svg",
+    "/assets/logos/css.svg",
+    "/assets/logos/javascript.svg",
+    "/assets/logos/php.svg",
+  ],
+  webTechnologies: [
+    "/assets/logos/reactjs.svg",
+    "/assets/logos/nodejs.svg",
+    "/assets/logos/express.svg",
+    "/assets/logos/laravel.svg",
+    "/assets/logos/gsap.svg",
+  ],
+  databases: [
+    "/assets/logos/mongodb.svg",
+    "/assets/logos/oracledb.svg",
+    "/assets/logos/mysql.svg",
+  ],
+  tools: [
+    "/assets/logos/github.svg",
+    "/assets/logos/vite.svg",
+    "/assets/logos/docker.svg",
+    "/assets/logos/kubernetes.svg",
+  ],
+  machineLearning: [
+    "/assets/logos/tensorflow.svg",
+    "/assets/logos/pandas.svg",
+    "/assets/logos/numpy.svg",
+  ]
+};
+
+export const skillsSectionHeading = {
+  programmingLanguages: "Programming Languages",
+  coreWebTechnologies: "Core Web Technologies",
+  webTechnologies: "Web Technologies",
+  databases: "Databases",
+  tools: "Tools",
+  machineLearning: "Machine Learning"
+};

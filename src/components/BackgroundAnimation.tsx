@@ -29,7 +29,7 @@ const BackgroundAnimation = () => {
       scrollTrigger: {
         trigger: document.body,
         start: "top top",
-        end: "+=100%",
+        end: "+=400%",
         scrub: true,
       },
     });
@@ -41,7 +41,7 @@ const BackgroundAnimation = () => {
       scrollTrigger: {
         trigger: document.body,
         start: "top top",
-        end: "+=100%",
+        end: "+=400%",
         scrub: true,
       },
     });
