@@ -164,7 +164,7 @@ const Hero = () => {
         scrollTrigger: {
           scrub: true,
           trigger: imgRef.current,
-          start: "bottom 95%",
+          start: "bottom 93%",
           end: "bottom top",
         },
       });
