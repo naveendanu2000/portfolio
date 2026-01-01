@@ -36,7 +36,7 @@ const EducationCard = ({
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >
-      <div className="absolute flex flex-col p-4 bg-white/5 backdrop-blur-xl bottom-0 w-full h-[40%]">
+      <div className="absolute flex flex-col p-4 bg-black/5 backdrop-blur-3xl bottom-0 w-full h-[40%]">
         <h3 className="text-2xl my-[4%]">{schoolName}</h3>
         <div className="flex flex-row">
           <div className="flex-1">

@@ -1,11 +1,14 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import Navbar from "./Navbar";
 import Logo from "./micro-components/Logo";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Button from "./micro-components/Button";
+import { ThemeContext } from "../context/Theme";
 
 const Header = () => {
   const rightDivRef = useRef<HTMLDivElement>(null);
+  const { toggleTheme } = useContext(ThemeContext);
 
   useGSAP(() => {
     gsap.fromTo(
@@ -19,13 +22,13 @@ const Header = () => {
         opacity: 1,
         delay: 0.3,
         duration: 0.8,
-        ease: "power3.out"
+        ease: "power3.out",
       }
     );
   }, []);
 
   return (
-    <div className="flex flex-row my-4">
+    <div className="flex flex-row py-4">
       <div className=" md:flex-2 flex-1 flex justify-center items-center">
         <Logo height={100} width={100} />
       </div>
@@ -36,7 +39,7 @@ const Header = () => {
         ref={rightDivRef}
         className=" md:flex-2 flex-3 flex justify-center items-center"
       >
-
+        <Button text="[Theme]" onClick={toggleTheme} />
       </div>
     </div>
   );

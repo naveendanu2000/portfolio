@@ -17,7 +17,7 @@ export const experienceCard = [
   },
   {
     imgSrc: "/assets/ID-Cards/id_accenture.png",
-    companyName: "Accenture",
+    companyName: "BABVIP",
     timeline: "Sep, 24 - Oct, 25",
     description: [
       "Trained in MERN stack.",
@@ -123,7 +123,6 @@ export const skillsSection = {
     "/assets/logos/cpp.svg",
     "/assets/logos/java.svg",
     "/assets/logos/python.svg",
-    "/assets/logos/c.svg",
   ],
   coreWebTechnologies: [
     "/assets/logos/html.svg",

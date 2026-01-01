@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { ThemeContext } from "../../context/Theme";
 
 const Link = ({ text }: { text: string }) => {
   const linkRef = useRef<HTMLAnchorElement>(null);
@@ -25,6 +26,8 @@ const Link = ({ text }: { text: string }) => {
     );
   }, []);
 
+  const { dark } = useContext(ThemeContext);
+
   return (
     <a
       ref={linkRef}
@@ -48,12 +51,17 @@ const Link = ({ text }: { text: string }) => {
       <span className="relative z-10">{text}</span>
       <span
         ref={glowRef}
+        style={{
+          backgroundImage: `radial-gradient(
+          circle at bottom,
+          ${dark ? "rgba(222,222,222,0.4)" : "rgba(120,119,119,1)"},
+          transparent 100%)`,
+        }}
         className="
             absolute inset-0
             z-0
             -translate-x-1.2
             rounded-4xl
-            bg-[radial-gradient(circle_at_bottom,#DEDEDE,transparent_100%)]
             opacity-0
             pointer-events-none"
       />

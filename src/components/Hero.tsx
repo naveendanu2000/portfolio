@@ -164,7 +164,7 @@ const Hero = () => {
         scrollTrigger: {
           scrub: true,
           trigger: imgRef.current,
-          start: "bottom 93%",
+          start: "bottom 95%",
           end: "bottom top",
         },
       });
@@ -196,7 +196,7 @@ const Hero = () => {
             <strong className="text-violet-400">driven</strong> web experiences.
           </h3>
           <div className="mt-5 -mx-3">
-            <Button text="View Projects" />
+            <Button text="[View Projects]" />
           </div>
         </div>
       </div>
@@ -209,14 +209,14 @@ const Hero = () => {
       </div>
       <div className="inline-block bottom-0 flex-1 px-[8%] xl:px-[10%] text-right py-[2%]">
         <div ref={rightHeroRef} className="h-full">
-          <h2 className="md:text-6xl xl:text-7xl mb-8">
+          <div className="md:text-6xl xl:text-7xl mb-8">
             <p className="text-2xl mb-2">I believe</p>
             <p className="text-red-700 mb-2">Challenges</p>
             <p className=" mb-2">define</p>
             <h1 ref={showSkillRef} className="text-violet-400">
               {showSkill}
             </h1>
-          </h2>
+          </div>
         </div>
       </div>
     </div>

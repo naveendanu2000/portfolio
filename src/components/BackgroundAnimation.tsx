@@ -4,40 +4,48 @@ import sun from "/assets/background-images/sun.png";
 import moon from "/assets/background-images/moon.png";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useContext, useRef, useEffect } from "react";
+import { ThemeContext } from "../context/Theme";
 
 const BackgroundAnimation = () => {
   const moonRef = useRef<HTMLImageElement>(null);
   const sunRef = useRef<HTMLImageElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const starsRef = useRef<HTMLDivElement>(null);
+  const count = 600;
+  const { dark } = useContext(ThemeContext);
+
+  useGSAP(() => {
+    gsap.set(moonRef.current, {
+      x: -40,
+      y: 0,
+      opacity: dark ? 1 : 0,
+    });
+    gsap.set(sunRef.current, {
+      x: -200,
+      y: -200,
+      opacity: dark ? 0 : 1,
+    });
+  }, []);
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: bgRef.current,
-    //     scrub: true,
-    //     start: "top top",
-    //     end: "bottom top",
-    //   },
-    // });
     gsap.to(moonRef.current, {
-      y: 250,
-      x: -120,
+      y: 200,
+      x: 120,
+      scale: 1.5,
       ease: "none",
       scrollTrigger: {
         trigger: document.body,
         start: "top top",
-        end: "+=400%",
+        end: "+=500%",
         scrub: true,
       },
     });
 
     gsap.to(sunRef.current, {
-      y: 200,
-      x: 180,
+      scale: 3,
       ease: "none",
       scrollTrigger: {
         trigger: document.body,
@@ -47,7 +55,7 @@ const BackgroundAnimation = () => {
       },
     });
 
-    gsap.to(starsRef.current!.children, {
+    gsap.to(starsRef.current, {
       x: -100,
       y: -100,
       ease: "none",
@@ -60,11 +68,54 @@ const BackgroundAnimation = () => {
     });
   }, []);
 
-  const count = 600;
+  const tl = useRef<gsap.core.Timeline | null>(null);
+
+  useGSAP(() => {
+    tl.current = gsap.timeline({ paused: true });
+
+    tl.current
+      .timeScale(1.2)
+      .to(moonRef.current, {
+        x: -200,
+        y: -200,
+        opacity: 0,
+        duration: 0.65,
+        ease: "power4.in",
+      })
+      .to(bgRef.current, {
+        backgroundImage:
+          "radial-gradient(circle at top left, rgba(252,211,77,0.9), rgba(254,243,199,1) 30%, rgba(255,251,235,0.4) 80%, rgba(69,26,3,1) 92%, black)",
+        duration: 2,
+        ease: "power4.inOut",
+      })
+      .to(sunRef.current, {
+        x: -180,
+        y: -120,
+        opacity: 1,
+        duration: 0.65,
+        ease: "power4.out",
+      });
+  }, []);
+
+  useEffect(() => {
+    if (!tl.current) return;
+
+    if (dark) {
+      tl.current.reverse();
+    } else {
+      tl.current.play();
+    }
+  }, [dark]);
 
   return (
-    <div ref={bgRef} className="fixed w-dvw">
-      <div ref={starsRef} className="fixed h-full w-[200%] -z-20 pointer-events-none">
+    <div
+      ref={bgRef}
+      className="fixed h-full w-dvw bg-[radial-gradient(circle_at_0%_0%,#4B5563_10%,#111827_45%,#000000_85%)] "
+    >
+      <div
+        ref={starsRef}
+        className="fixed h-full w-[200%] -z-20 pointer-events-none"
+      >
         {Array.from({ length: count }).map((_, i) => (
           <span
             key={i}
@@ -81,16 +132,8 @@ const BackgroundAnimation = () => {
           />
         ))}
       </div>
-      <img
-        ref={sunRef}
-        src={sun}
-        className="hidden h-60 float-end translate-x-20 translate-y-20"
-      />
-      <img
-        ref={moonRef}
-        src={moon}
-        className="h-40 -translate-x-10 translate-y-40"
-      />
+      <img ref={sunRef} src={sun} className={` h-60  absolute left-0 top-0`} />
+      <img ref={moonRef} src={moon} className={`h-40 absolute left-0 top-0`} />
     </div>
   );
 };
