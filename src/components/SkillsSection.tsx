@@ -73,7 +73,7 @@ const SkillsSection = () => {
         className="mx-5 flex flex-wrap justify-center"
       >
         {Object.entries(skillsSection).map(([skillName, skills]) => (
-          <div className="xl:m-[2%] md:m-[5%] xl:p-10 xl:max-w-[35%] min-w-[85%] md:min-w-[15%] h-fit rounded-xl inline-block md:w-fit bg-black/5 backdrop-blur-xl ">
+          <div className="mb-[5%] xl:m-[2%] md:m-[5%] xl:p-10 xl:max-w-[35%] min-w-[85%] md:min-w-[15%] h-fit rounded-xl inline-block md:w-fit bg-black/5 backdrop-blur-xl ">
             <h2
               className="md:text-3xl text-xl text-center text-nowrap"
               key={skillName}
