@@ -20,7 +20,7 @@ const ExperienceSection = () => {
         trigger: headingRef.current,
         scrub: true,
         start: "top bottom",
-        end: "+=500",
+        end: "top center",
       },
     });
 
@@ -33,16 +33,21 @@ const ExperienceSection = () => {
         trigger: experienceSectionRef.current,
         scrub: true,
         start: "top bottom",
-        end: "center center",
+        end: "top center",
       },
     });
   });
 
   return (
-    <div className="mx-5 py-[2%] min-h-screen ">
-      <h1 ref={headingRef} className="text-6xl mb-[4%] text-center">
+    <div className="md:mx-5 mb-10 xl:mb-0 py-[2%] xl:min-h-screen ">
+      <h1
+        ref={headingRef}
+        className="text-3xl  md:text-5xl xl:text-6xl mb-[8%] md:mb-15 xl:mb-[5%] text-center"
+      >
         {" "}
-        EXPERIENCE{" "}
+        <span className="backdrop-blur-2xl rounded-xl px-5 py-3">
+          EXPERIENCE
+        </span>{" "}
       </h1>
       <div ref={experienceSectionRef} className="mx-5">
         {experienceCard.map((card) => (

@@ -31,7 +31,7 @@ const IdCard = ({ imgSrc }: { imgSrc: string }) => {
     <div>
       <div
         ref={idCardRef}
-        className="relative h-70 w-50 overflow-hidden rounded-xl"
+        className="relative lg:h-70 lg:w-50 h-30 w-20 overflow-hidden rounded-xl"
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >

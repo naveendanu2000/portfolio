@@ -18,7 +18,7 @@ const EducationSection = () => {
           trigger: headingRef.current,
           scrub: true,
           start: "top bottom",
-          end: "+=60%",
+          end: "top center",
         },
       })
       .from(headingRef.current, {
@@ -43,12 +43,18 @@ const EducationSection = () => {
 
   return (
     <div className="mx-5 py-[2%] px-[5%] min-h-[90%] flex flex-col justify-center">
-      <h1 ref={headingRef} className="text-6xl mb-[4%] text-center">
-        Education
+      <h1
+        ref={headingRef}
+        className="text-3xl  md:text-5xl xl:text-6xl md:mb-[8%] mb-[15%] text-center"
+      >
+        {" "}
+        <span className="backdrop-blur-2xl rounded-xl px-5 py-3">
+          EDUCATION
+        </span>{" "}
       </h1>
       <div
         ref={educationSectionRef}
-        className="mx-5 flex flex-wrap justify-center"
+        className="md:mx-5 flex flex-wrap justify-center"
       >
         {educationCard.map((education) => (
           <EducationCard

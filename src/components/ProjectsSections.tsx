@@ -41,9 +41,15 @@ const ProjectsSections = () => {
   });
 
   return (
-    <div className="mx-5 py-[2%] min-h-screen">
-      <h1 ref={headingRef} className="text-6xl mb-[4%] text-center">
-        Projects
+    <div className="md:mx-5 mb-10 xl:mb-0 py-[2%] md:min-h-screen">
+      <h1
+        ref={headingRef}
+        className="text-3xl  md:text-5xl xl:text-6xl mb-[8%] md:mb-15 xl:mb-[3%] text-center"
+      >
+        {" "}
+        <span className="backdrop-blur-2xl rounded-xl px-5 py-3">
+          PROJECTS
+        </span>{" "}
       </h1>
       <div ref={projectSectionRef} className="mx-5">
         {projectCard.map((card) => (

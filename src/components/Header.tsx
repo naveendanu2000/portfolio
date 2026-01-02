@@ -1,14 +1,26 @@
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import Navbar from "./Navbar";
 import Logo from "./micro-components/Logo";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Button from "./micro-components/Button";
 import { ThemeContext } from "../context/Theme";
+import HamburgerButton from "./micro-components/HamburgerButton";
 
 const Header = () => {
   const rightDivRef = useRef<HTMLDivElement>(null);
   const { toggleTheme } = useContext(ThemeContext);
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen((prev) => !prev);
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLDivElement>) => {
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      setOpen(false);
+    }
+  };
 
   useGSAP(() => {
     gsap.fromTo(
@@ -29,15 +41,29 @@ const Header = () => {
 
   return (
     <div className="flex flex-row py-4">
-      <div className=" md:flex-2 flex-1 flex justify-center items-center">
+      <div className="flex-1 lg:hidden flex items-center">
+        <div
+          className="flex justify-center grow"
+          tabIndex={0}
+          onBlur={handleBlur}
+        >
+          <HamburgerButton open={open} handleOpen={handleOpen} />
+          {open && (
+            <div className="absolute top-25 left-5 z-50">
+              <Navbar />
+            </div>
+          )}
+        </div>
+      </div>
+      <div className="lg:flex-2 flex-1 flex justify-center items-center">
         <Logo height={100} width={100} />
       </div>
-      <div className=" flex-5 flex justify-center items-center">
+      <div className={`xl:flex-5 hidden lg:flex justify-center items-center`}>
         <Navbar />
       </div>
       <div
         ref={rightDivRef}
-        className=" md:flex-2 flex-3 flex justify-center items-center"
+        className=" lg:flex-2 flex-1 flex justify-center items-center"
       >
         <Button text="[Theme]" onClick={toggleTheme} />
       </div>

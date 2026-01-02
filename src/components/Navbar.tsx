@@ -26,13 +26,18 @@ const Navbar = () => {
   return (
     <div
       ref={devRef}
+      tabIndex={0}
       className="
+        rounded-xl
+        flex
+        flex-col
+        lg:block
         pb-2 pt-4 px-2
-        rounded-full
+        lg:rounded-full
         bg-white/5
         backdrop-blur-md
         shadow-md
-        w-fit"
+        lg:w-fit"
     >
       <Link text="Home" />
       <Link text="Projects" />

@@ -34,25 +34,25 @@ const Footer = () => {
       {" "}
       <div className="z-10 w-full">
         <div className="inline-flex items-center mx-5 ">
-          <span className="text-3xl">Email </span>
+          <span className="md:text-3xl">Email </span>
           <span>
             <SkillLogo imgSrc={gmail} />
           </span>
         </div>
         <div className="inline-flex items-center mx-5 ">
-          <span className="text-3xl">Linkedin </span>
+          <span className="md:text-3xl">Linkedin </span>
           <span>
             <SkillLogo imgSrc={linkedin} />
           </span>
         </div>
         <div className="inline-flex items-center mx-5 ">
-          <span className="text-3xl">Github </span>
+          <span className="md:text-3xl">Github </span>
           <span>
             <SkillLogo imgSrc={github} />
           </span>
         </div>
       </div>
-      <div className=" z-1 absolute h-full translate-y-25 w-[130%] bg-[radial-gradient(ellipse_farthest-side_at_50%_110%,rgba(255,255,255,0.25),rgba(255,255,255,0.2)_30%,rgba(255,255,255,0.2)_80%,rgba(255,255,255,0.09)_92%,transparent)]" />
+      <div className=" z-1 absolute h-full translate-y-25 md:w-[130%] w-[300%] bg-[radial-gradient(ellipse_farthest-side_at_50%_110%,rgba(255,255,255,0.25),rgba(255,255,255,0.2)_30%,rgba(255,255,255,0.2)_80%,rgba(255,255,255,0.09)_92%,transparent)]" />
     </div>
   );
 };

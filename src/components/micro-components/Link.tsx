@@ -41,14 +41,14 @@ const Link = ({ text }: { text: string }) => {
       }}
       className="
         relative inline-block
-        px-5 py-2
+        px-5 md:py-2 py-5
         mx-3
         overflow-hidden
         isolate
-        rounded-4xl
+        lg:rounded-4xl
         cursor-pointer"
     >
-      <span className="relative z-10">{text}</span>
+      <span className="relative z-10 text-xl">{text}</span>
       <span
         ref={glowRef}
         style={{

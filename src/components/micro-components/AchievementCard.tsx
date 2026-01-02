@@ -37,7 +37,7 @@ const AchievementCard = ({
   });
 
   return (
-    <div className="flex flex-col justify-center items-center m-[2%] h-[20%] w-[15%] p-6 relative bg-black/5 backdrop-blur-xl rounded-xl">
+    <div className="flex flex-col justify-center items-center m-[2%] md:w-[40%] xl:h-[20%] xl:w-[15%] p-6 relative bg-black/5 backdrop-blur-xl rounded-xl">
       <div
         ref={imgRef}
         className="z-1 h-[40%]  mb-3 w-full overflow-hidden flex flex-1 justify-center items-center rounded-xl relative"
@@ -46,7 +46,7 @@ const AchievementCard = ({
         <img src={imgSrc} alt="achievement image" className="h-full w-full" />
         <Gloss />
       </div>
-      <div ref={descriptionRef} className="z-1 flex-2 w-full text-md">
+      <div ref={descriptionRef} className="z-1 flex-2 w-full text-xl">
         {description}
       </div>
     </div>

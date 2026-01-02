@@ -32,20 +32,20 @@ const EducationCard = ({
   return (
     <div
       ref={cardRef}
-      className="relative h-100 w-[20%] flex m-auto overflow-hidden"
+      className="relative xl:h-100 md:h-90 h-70 xl:w-[20%] w-[45%] mb-10 xl:mb-0 flex m-auto overflow-hidden "
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >
-      <div className="absolute flex flex-col p-4 bg-black/5 backdrop-blur-3xl bottom-0 w-full h-[40%]">
-        <h3 className="text-2xl my-[4%]">{schoolName}</h3>
-        <div className="flex flex-row">
+      <div className="absolute flex flex-col p-4 bg-black/5 backdrop-blur-3xl bottom-0 w-full xl:h-[40%]">
+        <h3 className="md:text-2xl text-sm my-[4%]">{schoolName}</h3>
+        <div className="flex md:flex-row flex-col">
           <div className="flex-1">
-            <h4 className="text-lg">{certificate}</h4>
-            <p>{cgpa}</p>
+            <h4 className="md:text-lg text-xs">{certificate}</h4>
+            <p className="md:text-md text-xs">{cgpa}</p>
           </div>
-          <div className="flex-1 text-right">
-            <h4 className="text-lg">{timeline}</h4>
-            <h4 className="text-lg">{place}</h4>
+          <div className="flex-1 md:text-right">
+            <h4 className="md:text-lg text-xs">{timeline}</h4>
+            <h4 className="md:text-lg text-xs">{place}</h4>
           </div>
         </div>
       </div>

@@ -58,17 +58,26 @@ const SkillsSection = () => {
   });
 
   return (
-    <div className="mx-5 py-[2%] px-[5%] min-h-screen flex justify-center">
-      <h1 ref={headingRef} className="text-6xl mb-[4%] text-center">
-        Skills
+    <div className="md:mx-5 mb-10 py-[2%] px-[5%] xl:flex justify-center">
+      <h1
+        ref={headingRef}
+        className="text-3xl  md:text-5xl xl:text-6xl mb-[8%] text-center"
+      >
+        {" "}
+        <span className="backdrop-blur-2xl rounded-xl px-5 py-3">
+          SKILLS
+        </span>{" "}
       </h1>
       <div
         ref={skillsSectionRef}
         className="mx-5 flex flex-wrap justify-center"
       >
         {Object.entries(skillsSection).map(([skillName, skills]) => (
-          <div className="m-[1%] p-10 max-w-[35%] rounded-xl inline-block w-fit bg-black/5 backdrop-blur-xl ">
-            <h2 className="text-3xl text-center text-nowrap me-5" key={skillName}>
+          <div className="xl:m-[2%] md:m-[5%] xl:p-10 xl:max-w-[35%] min-w-[85%] md:min-w-[15%] h-fit rounded-xl inline-block md:w-fit bg-black/5 backdrop-blur-xl ">
+            <h2
+              className="md:text-3xl text-xl text-center text-nowrap"
+              key={skillName}
+            >
               {
                 skillsSectionHeading[
                   skillName as keyof typeof skillsSectionHeading

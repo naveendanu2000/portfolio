@@ -59,7 +59,7 @@ const Hero = () => {
     gsap
       .timeline({})
       .from(split.chars, {
-        x: 100,
+        x: () => (window.innerWidth < 640 ? -100 : 100),
         rotateY: 1440,
         opacity: 0,
         autoAlpha: 0,
@@ -68,7 +68,7 @@ const Hero = () => {
         ease: "power1.inOut",
       })
       .to(split.chars, {
-        x: 100,
+        x: () => (window.innerWidth < 640 ? -100 : 100),
         rotateY: 1440,
         opacity: 0,
         delay: 0.8,
@@ -126,6 +126,8 @@ const Hero = () => {
 
   useGSAP(
     () => {
+      gsap.registerPlugin(ScrollTrigger);
+
       gsap.to(rightHeroRef.current, {
         x: 100,
         opacity: 0,
@@ -141,7 +143,6 @@ const Hero = () => {
       const rect = rightHeroRef.current!.getBoundingClientRect();
       if (rect.top < 0) return;
 
-      gsap.registerPlugin(ScrollTrigger);
       gsap.from(rightHeroRef.current, {
         y: 100,
         opacity: 0,
@@ -163,7 +164,7 @@ const Hero = () => {
         immediateRender: false,
         scrollTrigger: {
           scrub: true,
-          trigger: imgRef.current,
+          trigger: imgRef.current!.parentElement,
           start: "bottom 95%",
           end: "bottom top",
         },
@@ -183,14 +184,14 @@ const Hero = () => {
   );
 
   return (
-    <div className="relative w-dvw h-[80%] p-10 flex flex-row justify-center mx-5">
-      <div className="w-full lg:h-140 xl:h-170 md:h-100 flex flex-1 items-end px-[8%] xl:px-[10%]">
+    <div className="relative xl:w-dvw xl:h-[80%] xl:my-0 my-20 md:my-0 md:p-10 flex flex-col xl:flex-row justify-center mx-5 md:overflow-none overflow-hidden">
+      <div className="md:w-full xl:h-170 md:h-160 flex flex-1 items-end px-[8%] xl:px-[10%]">
         <div className="flex-1 h-fit" ref={leftHeroRef}>
-          <h2 className="text-4xl xl:text-5xl">Naveen Danu</h2>
-          <h1 className="text-[3.3rem] xl:text-7xl mt-2 text-violet-400">
+          <h2 className="lg:text-4xl md:text-xl text-lg xl:text-5xl">Naveen Danu</h2>
+          <h1 className="lg:text-[3.3rem] md:text-3xl text-xl xl:text-7xl mt-2 text-violet-400">
             Frontend Developer
           </h1>
-          <h3 className="text-3xl xl:text-4xl mt-3">
+          <h3 className="text-sm md:text-xl lg:text-3xl xl:text-4xl mt-3">
             crafting <strong className="text-violet-400">interactive</strong>,
             <br /> <strong className="text-violet-400">animation</strong> -{" "}
             <strong className="text-violet-400">driven</strong> web experiences.
@@ -200,17 +201,17 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div ref={imgRef} className="w-fit absolute">
+      <div ref={imgRef} className="xl:w-fit xl:absolute md:pt-15 pt-5 xl-pt-0 flex items-center">
         <img
           src={photo}
-          className=" xl:h-170 lg:h-100 flex mx-auto"
+          className="h-80 md:h-100 xl:h-170 lg:h-130 flex mx-auto"
           onMouseMove={onMouseMove}
         />
       </div>
       <div className="inline-block bottom-0 flex-1 px-[8%] xl:px-[10%] text-right py-[2%]">
         <div ref={rightHeroRef} className="h-full">
-          <div className="md:text-6xl xl:text-7xl mb-8">
-            <p className="text-2xl mb-2">I believe</p>
+          <div className="lg:text-6xl text-2xl xl:text-7xl mb-8">
+            <p className="xl:text-2xl text-sm mb-2">I believe</p>
             <p className="text-red-700 mb-2">Challenges</p>
             <p className=" mb-2">define</p>
             <h1 ref={showSkillRef} className="text-violet-400">

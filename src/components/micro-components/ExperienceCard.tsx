@@ -81,15 +81,20 @@ const ExperienceCard = ({
   return (
     <div
       ref={experienceCardRef}
-      className="bg-black/5 backdrop-blur-xl mb-5 rounded-xl w-[70%] flex flex-row justify-center items-center m-auto p-[3%]"
+      className="bg-black/5 backdrop-blur-xl mb-5 rounded-xl lg:w-[70%] flex flex-col lg:flex-row justify-center items-center m-auto lg:p-[3%] p-[8%]"
     >
       <div className="flex-2 xl:ps-[6%]">
-        <div ref={companyRef}>
-          <h1 className="text-3xl xl:text-4xl">{companyName}</h1>
-          <span>{timeline}</span>
+        <div ref={companyRef} className="lg:block flex flex-row">
+          <div className="lg:flex-none lg:block grow flex flex-col justify-center">
+            <h1 className="text-xl lg:text-3xl xl:text-4xl">{companyName}</h1>
+            <span className="text-lg lg:text-xl xl:text-2xl">{timeline}</span>
+          </div>
+          <div className="lg:hidden">
+            <IdCard imgSrc={imgSrc} />
+          </div>
         </div>
         <div className="p-[1%]">
-          <h3 ref={projectRef} className="text-2xl xl:text-3xl">
+          <h3 ref={projectRef} className="text-lg lg:text-2xl xl:text-3xl">
             {projectName}
           </h3>
           <ul ref={ulRef} className="py-[0.5%] xl:text-xl">
@@ -99,13 +104,16 @@ const ExperienceCard = ({
           </ul>
         </div>
         <h3 className="text-xl xl:text-3xl">Technologies</h3>
-        <div ref={skillsRef} className="flex flex-row p-[1%] w-[60%}">
+        <div ref={skillsRef} className="flex flex-row p-[1%]">
           {skills.map((skill) => (
             <SkillLogo key={skill} imgSrc={skill} />
           ))}
         </div>
       </div>
-      <div ref={idCardRef} className="flex-1 flex justify-center items-center">
+      <div
+        ref={idCardRef}
+        className="lg:visible hidden flex-1 lg:flex justify-center items-center"
+      >
         <IdCard imgSrc={imgSrc} />
       </div>
     </div>
