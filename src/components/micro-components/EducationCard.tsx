@@ -4,12 +4,14 @@ import { onMouseMove } from "../../effects/onMouseMove";
 import gsap from "gsap";
 
 const EducationCard = ({
+  imgSrc,
   schoolName,
   certificate,
   cgpa,
   timeline,
   place,
 }: {
+  imgSrc: string;
   schoolName: string;
   certificate: string;
   cgpa: string;
@@ -32,11 +34,17 @@ const EducationCard = ({
   return (
     <div
       ref={cardRef}
-      className="relative xl:h-100 md:h-90 h-70 xl:w-[20%] w-[45%] mb-10 xl:mb-0 flex m-auto overflow-hidden "
+      className={`relative xl:h-100 md:h-90 h-70 xl:w-[16%] w-[45%] mb-10 xl:mb-0 flex m-auto overflow-hidden backdrop-blur-xl`}
+      style={{
+        backgroundImage: `url(${imgSrc})`,
+        backgroundPositionX: "center",
+        backgroundSize: "150%",
+        backgroundRepeat: "no-repeat",
+      }}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >
-      <div className="absolute flex flex-col p-4 bg-black/5 backdrop-blur-3xl bottom-0 w-full xl:h-[40%]">
+      <div className="absolute flex flex-col p-4 bg-black/20 backdrop-blur-3xl bottom-0 w-full xl:h-[40%]">
         <h3 className="md:text-2xl text-sm my-[4%]">{schoolName}</h3>
         <div className="flex md:flex-row flex-col">
           <div className="flex-1">

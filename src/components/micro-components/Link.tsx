@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { useContext, useRef } from "react";
 import { ThemeContext } from "../../context/Theme";
 
-const Link = ({ text }: { text: string }) => {
+const Link = ({ text, href }: { text: string; href: string }) => {
   const linkRef = useRef<HTMLAnchorElement>(null);
   const glowRef = useRef<HTMLSpanElement>(null);
   const tl = useRef<gsap.core.Timeline | null>(null);
@@ -30,6 +30,7 @@ const Link = ({ text }: { text: string }) => {
 
   return (
     <a
+      href={href}
       ref={linkRef}
       onMouseEnter={() => {
         console.log("Mouse Enter");

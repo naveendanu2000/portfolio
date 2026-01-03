@@ -58,7 +58,7 @@ const SkillsSection = () => {
   });
 
   return (
-    <div className="md:mx-5 mb-10 py-[2%] px-[5%] xl:flex justify-center">
+    <div id="skills-section" className="md:mx-5 mb-10 py-[2%] px-[5%] xl:flex justify-center">
       <h1
         ref={headingRef}
         className="text-3xl  md:text-5xl xl:text-6xl mb-[8%] text-center"
@@ -73,7 +73,7 @@ const SkillsSection = () => {
         className="mx-5 flex flex-wrap justify-center"
       >
         {Object.entries(skillsSection).map(([skillName, skills]) => (
-          <div className="mb-[5%] xl:m-[2%] md:m-[5%] xl:p-10 xl:max-w-[35%] min-w-[85%] md:min-w-[15%] h-fit rounded-xl inline-block md:w-fit bg-black/5 backdrop-blur-xl ">
+          <div className="mb-[5%] xl:m-[1%] md:m-[5%] xl:p-10 xl:max-w-[38%] min-w-[85%] md:min-w-[15%] h-fit rounded-xl inline-block md:w-fit bg-black/5 backdrop-blur-xl ">
             <h2
               className="md:text-3xl text-xl text-center text-nowrap"
               key={skillName}

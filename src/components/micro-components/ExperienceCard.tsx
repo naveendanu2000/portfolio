@@ -104,7 +104,7 @@ const ExperienceCard = ({
           </ul>
         </div>
         <h3 className="text-xl xl:text-3xl">Technologies</h3>
-        <div ref={skillsRef} className="flex flex-row p-[1%]">
+        <div ref={skillsRef} className="flex flex-wrap flex-row p-[1%]">
           {skills.map((skill) => (
             <SkillLogo key={skill} imgSrc={skill} />
           ))}

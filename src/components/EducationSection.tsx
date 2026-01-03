@@ -42,7 +42,7 @@ const EducationSection = () => {
   });
 
   return (
-    <div className="mx-5 py-[2%] px-[5%] min-h-[90%] flex flex-col justify-center">
+    <div id="education-section" className="mx-5 py-[2%] px-[5%] min-h-[90%] flex flex-col justify-center">
       <h1
         ref={headingRef}
         className="text-3xl  md:text-5xl xl:text-6xl md:mb-[8%] mb-[15%] text-center"
@@ -59,6 +59,7 @@ const EducationSection = () => {
         {educationCard.map((education) => (
           <EducationCard
             key={education.schoolName}
+            imgSrc={education.imgSrc}
             schoolName={education.schoolName}
             certificate={education.certificate}
             cgpa={education.cgpa}

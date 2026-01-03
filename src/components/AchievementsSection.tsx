@@ -42,10 +42,10 @@ const AchievementsSection = () => {
   });
 
   return (
-    <div className="xl:mx-5 mb-10 py-[2%] px-[5%] min-h-[90%] flex flex-col justify-center">
+    <div id="achievements-section" className="xl:mx-5 mb-10 py-[2%] px-[5%] min-h-[90%] flex flex-col justify-center">
       <h1
         ref={headingRef}
-        className="text-3xl xl:text-5xl 2xl:text-6xl xl:mb-[8%] mb-[3%] text-center"
+        className="text-3xl xl:text-5xl 2xl:text-6xl mb-[8%] xl:mb-[3%] text-center"
       >
         {" "}
         <span className="backdrop-blur-2xl rounded-xl px-5 py-3">

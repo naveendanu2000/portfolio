@@ -15,7 +15,7 @@ const ProjectCard = ({
 }: {
   imgSrc: string;
   heading: string;
-  description: string;
+  description: string[];
   link: string;
 }) => {
   const imageRef = useRef<HTMLImageElement>(null);
@@ -69,27 +69,45 @@ const ProjectCard = ({
       });
   });
   return (
-    <div className="bg-black/5 items-center flex-row backdrop-blur-lg flex m-auto xl:p-[3%] p-[5%] rounded-xl md:w-[70%] w-ful">
+    <div className="bg-black/5 items-center flex-row backdrop-blur-lg flex m-auto xl:p-[3%] p-[5%] md:w-[70%] w-ful">
       <div
         ref={imageRef}
-        className="xl:block h-full flex-1 w-full hidden -me-25 -translate-x-[25%] rounded-xl shadow-md overflow-hidden"
+        className="xl:block flex-1 h-full w-fit hidden -me-25 -translate-x-[25%] rounded-xl shadow-md overflow-hidden"
       >
-        <img src={imgSrc} alt="project image" />
+        <img
+          src={imgSrc}
+          alt="project image"
+          className="object-cover w-full h-full"
+        />
         <Gloss />
       </div>
       <div className="min-h-125 flex-1 w-full py-5 md:pe-5 px-3">
-        <h2 ref={headingRef} className="md:text-3xl text-xl xl:text-left text-center mb-3">
+        <h2
+          ref={headingRef}
+          className="md:text-3xl text-xl xl:text-left text-center mb-3"
+        >
           {heading}
         </h2>
         <div
           ref={imageRef}
           className="h-full flex-1 w-full xl:hidden rounded-xl shadow-md overflow-hidden mb-5"
         >
-          <img src={imgSrc} alt="project image" />
+          <img
+            src={imgSrc}
+            alt="project image"
+            className="object-cover w-full h-full"
+          />
           <Gloss />
         </div>
-        <p ref={descriptionRef} className="mb-3 xl:px-0 px-3 md:text-xl text-md">
-          {description}
+        <p
+          ref={descriptionRef}
+          className="mb-3 xl:px-0 px-3 md:text-xl text-md"
+        >
+          <ul>
+            {description.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </p>
         <button ref={buttonRef} className="relative cursor-pointer">
           <a href={link}>
