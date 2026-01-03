@@ -1,6 +1,6 @@
 export const experienceCard = [
   {
-    imgSrc: "/assets/ID-Cards/id_accenture.png",
+    imgSrc: "/portfolio/assets/ID-Cards/id_accenture.png",
     companyName: "Accenture",
     timeline: "Sep, 24 - Oct, 25",
     description: [
@@ -10,17 +10,17 @@ export const experienceCard = [
     ],
     projectName: "Associate Software Engineer",
     skills: [
-      "/assets/logos/nodejs.svg",
-      "/assets/logos/express.svg",
-      "/assets/logos/reactjs.svg",
-      "/assets/logos/javascript.svg",
-      "/assets/logos/html.svg",
-      "/assets/logos/css.svg",
-      "/assets/logos/github.svg",
+      "/portfolio/assets/logos/nodejs.svg",
+      "/portfolio/assets/logos/express.svg",
+      "/portfolio/assets/logos/reactjs.svg",
+      "/portfolio/assets/logos/javascript.svg",
+      "/portfolio/assets/logos/html.svg",
+      "/portfolio/assets/logos/css.svg",
+      "/portfolio/assets/logos/github.svg",
     ],
   },
   {
-    imgSrc: "/assets/ID-Cards/id_accenture.png",
+    imgSrc: "/portfolio/assets/ID-Cards/id_accenture.png",
     companyName: "BABVIP",
     timeline: "Sep, 24 - Oct, 25",
     description: [
@@ -30,21 +30,21 @@ export const experienceCard = [
     ],
     projectName: "Laravel Development Intern",
     skills: [
-      "/assets/logos/laravel.svg",
-      "/assets/logos/php.svg",
-      "/assets/logos/reactjs.svg",
-      "/assets/logos/mysql.svg",
-      "/assets/logos/javascript.svg",
-      "/assets/logos/html.svg",
-      "/assets/logos/css.svg",
-      "/assets/logos/github.svg",
+      "/portfolio/assets/logos/laravel.svg",
+      "/portfolio/assets/logos/php.svg",
+      "/portfolio/assets/logos/reactjs.svg",
+      "/portfolio/assets/logos/mysql.svg",
+      "/portfolio/assets/logos/javascript.svg",
+      "/portfolio/assets/logos/html.svg",
+      "/portfolio/assets/logos/css.svg",
+      "/portfolio/assets/logos/github.svg",
     ],
   },
 ];
 
 export const projectCard = [
   {
-    imgSrc: "/assets/projects/skin-disease-prediction.png",
+    imgSrc: "/portfolio/assets/projects/skin-disease-prediction.png",
     heading: "Skin Disease Detection system",
     description: [
       "Built a web app that allows visitors to upload the image of their skin lesions and then detect the skin disease.",
@@ -54,7 +54,7 @@ export const projectCard = [
     link: "https://github.com/naveendanu2000/Skin_Disease_Detection.git",
   },
   {
-    imgSrc: "/assets/projects/salon-brokers.png",
+    imgSrc: "/portfolio/assets/projects/salon-brokers.png",
     heading: "Salon Brokers - salon services booking system",
     description: [
       "Developed a responsive React.js frontend with reusable components and clean UI for e-commerce workflows.",
@@ -64,7 +64,7 @@ export const projectCard = [
     link: "https://github.com/naveendanu2000/salon-booking-frontend.git",
   },
   {
-    imgSrc: "/assets/projects/restaurant-manager.png",
+    imgSrc: "/portfolio/assets/projects/restaurant-manager.png",
     heading: "UK 07 & Foods - Restaurant Management System",
     description: [
       "Built a Java application that can be used to manage the orders and menu of the restaurant.",
@@ -74,7 +74,7 @@ export const projectCard = [
     link: "https://github.com/naveendanu2000/Restaurant_management_application.git",
   },
   {
-    imgSrc: "/assets/projects/todo.png",
+    imgSrc: "/portfolio/assets/projects/todo.png",
     heading: "Todo L:st - todo list application",
     description: [
       "A lightweight Next.js + React Todo app with add/edit/delete, search & filter, and a dark/light theme — styled with Bootstrap.",
@@ -86,7 +86,7 @@ export const projectCard = [
     link: "https://github.com/naveendanu2000/todo_app.git",
   },
   {
-    imgSrc: "/assets/projects/tic-tac-toe.png",
+    imgSrc: "/portfolio/assets/projects/tic-tac-toe.png",
     heading: "Tic - Tac- Toe - the game",
     description: [
       "Tic‑Tac‑Toe game built with React + TypeScript + Vite.",
@@ -99,7 +99,7 @@ export const projectCard = [
     link: "https://github.com/naveendanu2000/tic-tac-toe.git",
   },
   {
-    imgSrc: "/assets/projects/food-ordering-site.png",
+    imgSrc: "/portfolio/assets/projects/food-ordering-site.png",
     heading: "Konoha Cafe - Landing page for a restaurant",
     description: [
       "Designed and implemented a single-page landing experience that highlights key menu categories and directs users to take action.",
@@ -112,22 +112,22 @@ export const projectCard = [
 
 export const achievementCard = [
   {
-    imgSrc: "/assets/achievements/research-certificate-sdd.jpg",
+    imgSrc: "/portfolio/assets/achievements/research-certificate-sdd.jpg",
     description: `Presented research name "Unveiling Dermatology: A Deep learning approach to detect skin diseases" at the second international CS Conference, 2024`,
   },
   {
-    imgSrc: "/assets/achievements/certificate-elements-of-ai.png",
+    imgSrc: "/portfolio/assets/achievements/certificate-elements-of-ai.png",
     description: `Completed the Elements of AI course, 2023 by Helsinki University`,
   },
   {
-    imgSrc: "/assets/achievements/leetcode-100-days.png",
+    imgSrc: "/portfolio/assets/achievements/leetcode-100-days.png",
     description: `Leetcode 100 days and more.`,
   },
 ];
 
 export const educationCard = [
   {
-    imgSrc: "/assets/education/mca.png",
+    imgSrc: "/portfolio/assets/education/mca.png",
     schoolName: "GEHU",
     certificate: "MCA",
     cgpa: "8.98 CGPA",
@@ -135,7 +135,7 @@ export const educationCard = [
     place: "Dehradun, India",
   },
   {
-    imgSrc: "/assets/education/bsc.png",
+    imgSrc: "/portfolio/assets/education/bsc.png",
     schoolName: "D.A.V pg college",
     certificate: "BSC",
     cgpa: "6.1 CGPA",
@@ -143,7 +143,7 @@ export const educationCard = [
     place: "Dehradun, India",
   },
   {
-    imgSrc: "/assets/education/intermediate.png",
+    imgSrc: "/portfolio/assets/education/intermediate.png",
     schoolName: "S.G.N.P. School",
     certificate: "Intermediate",
     cgpa: "74%",
@@ -151,7 +151,7 @@ export const educationCard = [
     place: "Dehradun, India",
   },
   {
-    imgSrc: "/assets/education/metric.png",
+    imgSrc: "/portfolio/assets/education/metric.png",
     schoolName: "S.G.N.P. School",
     certificate: "Metric",
     cgpa: "9.8 CGPA",
@@ -162,39 +162,39 @@ export const educationCard = [
 
 export const skillsSection = {
   programmingLanguages: [
-    "/assets/logos/c.svg",
-    "/assets/logos/cpp.svg",
-    "/assets/logos/java.svg",
-    "/assets/logos/python.svg",
+    "/portfolio/assets/logos/c.svg",
+    "/portfolio/assets/logos/cpp.svg",
+    "/portfolio/assets/logos/java.svg",
+    "/portfolio/assets/logos/python.svg",
   ],
   coreWebTechnologies: [
-    "/assets/logos/html.svg",
-    "/assets/logos/css.svg",
-    "/assets/logos/javascript.svg",
-    "/assets/logos/php.svg",
+    "/portfolio/assets/logos/html.svg",
+    "/portfolio/assets/logos/css.svg",
+    "/portfolio/assets/logos/javascript.svg",
+    "/portfolio/assets/logos/php.svg",
   ],
   webTechnologies: [
-    "/assets/logos/reactjs.svg",
-    "/assets/logos/nodejs.svg",
-    "/assets/logos/express.svg",
-    "/assets/logos/laravel.svg",
-    "/assets/logos/gsap.svg",
+    "/portfolio/assets/logos/reactjs.svg",
+    "/portfolio/assets/logos/nodejs.svg",
+    "/portfolio/assets/logos/express.svg",
+    "/portfolio/assets/logos/laravel.svg",
+    "/portfolio/assets/logos/gsap.svg",
   ],
   databases: [
-    "/assets/logos/mongodb.svg",
-    "/assets/logos/oracledb.svg",
-    "/assets/logos/mysql.svg",
+    "/portfolio/assets/logos/mongodb.svg",
+    "/portfolio/assets/logos/oracledb.svg",
+    "/portfolio/assets/logos/mysql.svg",
   ],
   tools: [
-    "/assets/logos/github.svg",
-    "/assets/logos/vite.svg",
-    "/assets/logos/docker.svg",
-    "/assets/logos/kubernetes.svg",
+    "/portfolio/assets/logos/github.svg",
+    "/portfolio/assets/logos/vite.svg",
+    "/portfolio/assets/logos/docker.svg",
+    "/portfolio/assets/logos/kubernetes.svg",
   ],
   machineLearning: [
-    "/assets/logos/tensorflow.svg",
-    "/assets/logos/pandas.svg",
-    "/assets/logos/numpy.svg",
+    "/portfolio/assets/logos/tensorflow.svg",
+    "/portfolio/assets/logos/pandas.svg",
+    "/portfolio/assets/logos/numpy.svg",
   ],
 };
 
