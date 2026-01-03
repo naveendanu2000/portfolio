@@ -24,10 +24,6 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
-      - name: Print computed base
-        run: |
-          node -e "const isGitHubPages = process.env.GITHUB_PAGES === 'true'; const repoName = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.split('/')[1] : ''; const base = isGitHubPages && repoName ? `/${repoName}/` : '/'; console.log('GITHUB_PAGES=', process.env.GITHUB_PAGES); console.log('GITHUB_REPOSITORY=', process.env.GITHUB_REPOSITORY); console.log('Computed base=', base);"
-
       - name: Install dependencies
         run: npm ci
 
