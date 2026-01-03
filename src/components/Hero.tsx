@@ -184,10 +184,15 @@ const Hero = () => {
   );
 
   return (
-    <div id="home" className="relative xl:w-dvw xl:h-[80%] xl:my-0 my-20 md:my-0 md:p-10 flex flex-col xl:flex-row justify-center mx-5 md:overflow-none overflow-hidden">
+    <div
+      id="home"
+      className="relative xl:w-dvw xl:h-[80%] xl:my-0 my-20 md:my-0 md:p-10 flex flex-col xl:flex-row justify-center mx-5 md:overflow-none overflow-hidden"
+    >
       <div className="md:w-full xl:h-170 md:h-160 flex flex-1 items-end px-[8%] xl:px-[10%]">
         <div className="flex-1 h-fit" ref={leftHeroRef}>
-          <h2 className="lg:text-4xl md:text-xl text-lg xl:text-5xl">Naveen Danu</h2>
+          <h2 className="lg:text-4xl md:text-xl text-lg xl:text-5xl">
+            Naveen Danu
+          </h2>
           <h1 className="lg:text-[3.3rem] md:text-3xl text-xl xl:text-7xl mt-2 text-violet-400">
             Frontend Developer
           </h1>
@@ -197,11 +202,16 @@ const Hero = () => {
             <strong className="text-violet-400">driven</strong> web experiences.
           </h3>
           <div className="mt-5 -mx-3">
-            <Button text="[View Projects]" />
+            <a href="#projects-section">
+              <Button text="[View Projects]" />
+            </a>
           </div>
         </div>
       </div>
-      <div ref={imgRef} className="xl:w-fit xl:absolute md:pt-15 pt-5 xl-pt-0 flex items-center">
+      <div
+        ref={imgRef}
+        className="xl:w-fit xl:absolute md:pt-15 pt-5 xl-pt-0 flex items-center"
+      >
         <img
           src={photo}
           className="h-80 md:h-100 xl:h-170 lg:h-130 flex mx-auto"
