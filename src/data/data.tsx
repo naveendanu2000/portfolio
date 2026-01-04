@@ -155,7 +155,7 @@ export const educationCard = [
     schoolName: "S.G.N.P. School",
     certificate: "Metric",
     cgpa: "9.8 CGPA",
-    timeline: "2017",
+    timeline: "2015",
     place: "Dehradun, India",
   },
 ];
