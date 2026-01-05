@@ -50,14 +50,12 @@ const Header = () => {
         if (self.direction === -1) {
           gsap.to(headerRef.current, {
             y: 0,
-            backdropFilter: "blur(2px)",
             duration: 0.4,
             ease: "power3.out",
           });
         } else {
           gsap.to(headerRef.current, {
             y: -110,
-            backdropFilter: "blur(0px)",
             duration: 0.4,
             ease: "power3.out",
           });
@@ -67,7 +65,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div ref={headerRef} className="fixed top-0 w-full z-99 flex flex-row py-4">
+    <div ref={headerRef} className="fixed top-0 w-full z-20 flex flex-row py-4">
       <div className="flex-1 lg:hidden flex items-center">
         <div
           className="flex justify-center grow"

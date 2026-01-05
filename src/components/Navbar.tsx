@@ -28,6 +28,7 @@ const Navbar = () => {
       ref={devRef}
       tabIndex={0}
       className="
+      relative z-50
         rounded-xl
         flex
         flex-col
