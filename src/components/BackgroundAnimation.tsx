@@ -9,6 +9,7 @@ import { ThemeContext } from "../context/Theme";
 
 const BackgroundAnimation = () => {
   const moonRef = useRef<HTMLImageElement>(null);
+  const moonParentRef = useRef<HTMLImageElement>(null);
   const sunRef = useRef<HTMLImageElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const starsRef = useRef<HTMLDivElement>(null);
@@ -71,11 +72,13 @@ const BackgroundAnimation = () => {
   const tl = useRef<gsap.core.Timeline | null>(null);
 
   useGSAP(() => {
+    tl.current?.kill();
+
     tl.current = gsap.timeline({ paused: true });
 
     tl.current
       .timeScale(1.2)
-      .to(moonRef.current, {
+      .to(moonParentRef.current, {
         x: -200,
         y: -200,
         opacity: 0,
@@ -133,7 +136,13 @@ const BackgroundAnimation = () => {
         ))}
       </div>
       <img ref={sunRef} src={sun} className={` h-60  absolute left-0 top-0`} />
-      <img ref={moonRef} src={moon} className={`h-40 absolute left-0 top-0`} />
+      <div ref={moonParentRef}>
+        <img
+          ref={moonRef}
+          src={moon}
+          className={`h-40 absolute left-0 top-0`}
+        />
+      </div>
     </div>
   );
 };
