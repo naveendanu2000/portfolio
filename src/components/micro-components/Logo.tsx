@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 export default function BoltFillGlow({
   height,
@@ -13,6 +14,7 @@ export default function BoltFillGlow({
   const logoRef = useRef<SVGSVGElement>(null);
 
   const rotateOnClick = () => {
+    homeOnClick();
     gsap
       .timeline()
       .to(logoRef.current, {
@@ -27,6 +29,16 @@ export default function BoltFillGlow({
         rotateY: 0,
         ease: "power4.inOut",
       });
+  };
+
+  const homeOnClick = () => {
+    gsap.registerPlugin(ScrollToPlugin);
+
+    gsap.to(window, {
+      duration: 1.2,
+      scrollTo: { y: "#home", offsetY: 10 },
+      ease: "power4.inOut",
+    });
   };
 
   useGSAP(() => {

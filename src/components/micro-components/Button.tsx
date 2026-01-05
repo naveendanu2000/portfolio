@@ -50,7 +50,8 @@ export default function Button({
         overflow-hidden
         isolate
         cursor-pointer
-        rounded-lg"
+        rounded-lg
+        backdrop-blur-2xl"
       onClick={onClick}
     >
       <span className="relative z-10">{text}</span>

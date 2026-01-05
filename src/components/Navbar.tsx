@@ -41,7 +41,7 @@ const Navbar = () => {
     >
       <Link text="Home" href="#home"/>
       <Link text="Projects" href="#projects-section"/>
-      <Link text="Tec stack" href="#skills-section"/>
+      <Link text="Tech stack" href="#skills-section"/>
       <Link text="Socials" href="#footer"/>
     </div>
   );

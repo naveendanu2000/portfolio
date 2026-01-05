@@ -57,7 +57,7 @@ const Header = () => {
         } else {
           // scrolling DOWN → hide header
           gsap.to(headerRef.current, {
-            y: -100,
+            y: -110,
             duration: 0.4,
             ease: "power3.out",
           });
