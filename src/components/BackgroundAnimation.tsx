@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/purity */
 import { useGSAP } from "@gsap/react";
 import sun from "/assets/background-images/sun.png";
-import moon from "/assets/background-images/moon.png";
+import moon from "/assets/background-images/moon.webp";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useContext, useRef, useEffect } from "react";

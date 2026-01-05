@@ -1,4 +1,4 @@
-import photo from "/assets/naveendanu.png";
+import photo from "/assets/naveendanu.webp";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import gsap from "gsap";
 import Button from "./micro-components/Button";
