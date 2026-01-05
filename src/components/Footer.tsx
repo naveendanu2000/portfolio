@@ -75,7 +75,7 @@ const Footer = () => {
           </div>
         </a>
       </div>
-      <div className="pt-5">Desgined and built by Naveen Danu</div>
+      <div className="py-5">Desgined and built by Naveen Danu</div>
       <div className=" z-1 absolute h-full translate-y-15 md:w-[130%] w-[300%] bg-[radial-gradient(ellipse_farthest-side_at_50%_110%,rgba(255,255,255,0.25),rgba(255,255,255,0.2)_30%,rgba(255,255,255,0.2)_80%,rgba(255,255,255,0.09)_92%,transparent)]" />
     </div>
   );
