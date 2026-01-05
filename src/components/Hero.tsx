@@ -187,7 +187,7 @@ const Hero = () => {
   const scroll = () => {
     gsap.registerPlugin(ScrollToPlugin);
 
-    gsap.to("#projects-button", {
+    gsap.to(window, {
       duration: 1.2,
       scrollTo: { y: "#projects-section", offsetY: 10 },
       ease: "power4.out",
