@@ -48,14 +48,12 @@ const Header = () => {
       end: "max",
       onUpdate: (self) => {
         if (self.direction === -1) {
-          // scrolling UP → show header
           gsap.to(headerRef.current, {
             y: 0,
             duration: 0.4,
             ease: "power3.out",
           });
         } else {
-          // scrolling DOWN → hide header
           gsap.to(headerRef.current, {
             y: -110,
             duration: 0.4,
