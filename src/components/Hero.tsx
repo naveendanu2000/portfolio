@@ -186,7 +186,7 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="relative xl:w-dvw xl:h-[80%] xl:my-0 my-20 md:my-0 md:p-10 flex flex-col xl:flex-row justify-center mx-5 md:overflow-none overflow-hidden"
+      className="relative xl:w-dvw xl:h-[80%] xl:my-0 md:my-0 pt-35 flex flex-col xl:flex-row justify-center mx-5 md:overflow-none overflow-hidden"
     >
       <div className="md:w-full xl:h-170 md:h-160 flex flex-1 items-end px-[8%] xl:px-[10%]">
         <div className="flex-1 h-fit" ref={leftHeroRef}>

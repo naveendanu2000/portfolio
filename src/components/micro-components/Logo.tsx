@@ -12,6 +12,23 @@ export default function BoltFillGlow({
   const maskRectRef = useRef<SVGRectElement>(null);
   const logoRef = useRef<SVGSVGElement>(null);
 
+  const rotateOnClick = () => {
+    gsap
+      .timeline()
+      .to(logoRef.current, {
+        duration: 1,
+        overwrite: true,
+        rotateY: "+=1080",
+        ease: "power1.out",
+      })
+      .to(logoRef.current, {
+        delay: 0.5,
+        duration: 0.65,
+        rotateY: 0,
+        ease: "power4.inOut",
+      });
+  };
+
   useGSAP(() => {
     gsap.fromTo(
       maskRectRef.current,
@@ -58,6 +75,7 @@ export default function BoltFillGlow({
 
   return (
     <svg
+      onClick={rotateOnClick}
       ref={logoRef}
       width={width}
       height={height}
@@ -65,7 +83,7 @@ export default function BoltFillGlow({
       xmlns="http://www.w3.org/2000/svg"
       className="cursor-pointer"
     >
-      <path d={boltPath} className="fill-indigo-400" filter="url(#shadow)"/>
+      <path d={boltPath} className="fill-indigo-400" filter="url(#shadow)" />
 
       <path
         d={boltPath}

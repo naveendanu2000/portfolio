@@ -6,8 +6,10 @@ import gsap from "gsap";
 import Button from "./micro-components/Button";
 import { ThemeContext } from "../context/Theme";
 import HamburgerButton from "./micro-components/HamburgerButton";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Header = () => {
+  const headerRef = useRef<HTMLDivElement>(null);
   const rightDivRef = useRef<HTMLDivElement>(null);
   const { toggleTheme } = useContext(ThemeContext);
   const [open, setOpen] = useState(false);
@@ -37,10 +39,35 @@ const Header = () => {
         ease: "power3.out",
       }
     );
+
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.set(headerRef.current, { y: 0 });
+
+    ScrollTrigger.create({
+      start: 0,
+      end: "max",
+      onUpdate: (self) => {
+        if (self.direction === -1) {
+          // scrolling UP → show header
+          gsap.to(headerRef.current, {
+            y: 0,
+            duration: 0.4,
+            ease: "power3.out",
+          });
+        } else {
+          // scrolling DOWN → hide header
+          gsap.to(headerRef.current, {
+            y: -100,
+            duration: 0.4,
+            ease: "power3.out",
+          });
+        }
+      },
+    });
   }, []);
 
   return (
-    <div className="flex flex-row py-4">
+    <div ref={headerRef} className="fixed top-0 w-full z-99 flex flex-row py-4">
       <div className="flex-1 lg:hidden flex items-center">
         <div
           className="flex justify-center grow"
@@ -55,7 +82,7 @@ const Header = () => {
           )}
         </div>
       </div>
-      <div className="lg:flex-2 flex-1 flex justify-center items-center">
+      <div className="lg:flex-2 flex-1 flex justify-center items-center perspective-distant">
         <Logo height={100} width={100} />
       </div>
       <div className={`xl:flex-5 hidden lg:flex justify-center items-center`}>
