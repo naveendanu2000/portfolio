@@ -113,7 +113,7 @@ export const projectCard = [
 export const achievementCard = [
   {
     imgSrc: "/portfolio/assets/achievements/research-certificate-sdd.jpg",
-    description: `Presented research name "Unveiling Dermatology: A Deep learning approach to detect skin diseases" at the second international CS Conference, 2024`,
+    description: `Presented research named "Unveiling Dermatology: A Deep learning approach to detect skin diseases" at the second international CS Conference, 2024`,
   },
   {
     imgSrc: "/portfolio/assets/achievements/certificate-elements-of-ai.png",
