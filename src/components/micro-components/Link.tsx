@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useContext, useRef } from "react";
 import { ThemeContext } from "../../context/Theme";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 const Link = ({ text, href }: { text: string; href: string }) => {
   const linkRef = useRef<HTMLAnchorElement>(null);
@@ -26,11 +27,21 @@ const Link = ({ text, href }: { text: string; href: string }) => {
     );
   }, []);
 
+  const scrollToWindow = () => {
+    gsap.registerPlugin(ScrollToPlugin);
+
+    gsap.to(window, {
+      duration: 1.2,
+      scrollTo: { y: href, offsetY: 20 },
+      ease: "power4.inOut",
+    });
+  };
+
   const { dark } = useContext(ThemeContext);
 
   return (
     <a
-      href={href}
+      onClick={scrollToWindow}
       ref={linkRef}
       onMouseEnter={() => {
         console.log("Mouse Enter");
