@@ -50,12 +50,14 @@ const Header = () => {
         if (self.direction === -1) {
           gsap.to(headerRef.current, {
             y: 0,
+            backdropFilter: "blur(2px)",
             duration: 0.4,
             ease: "power3.out",
           });
         } else {
           gsap.to(headerRef.current, {
             y: -110,
+            backdropFilter: "blur(0px)",
             duration: 0.4,
             ease: "power3.out",
           });
@@ -81,7 +83,7 @@ const Header = () => {
         </div>
       </div>
       <div className="lg:flex-2 flex-1 flex justify-center items-center perspective-distant">
-        <Logo height={100} width={100} />
+        <Logo />
       </div>
       <div className={`xl:flex-5 hidden lg:flex justify-center items-center`}>
         <Navbar />

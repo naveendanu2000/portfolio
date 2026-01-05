@@ -3,13 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-export default function BoltFillGlow({
-  height,
-  width,
-}: {
-  height: number;
-  width: number;
-}) {
+export default function Logo() {
   const maskRectRef = useRef<SVGRectElement>(null);
   const logoRef = useRef<SVGSVGElement>(null);
 
@@ -89,11 +83,9 @@ export default function BoltFillGlow({
     <svg
       onClick={rotateOnClick}
       ref={logoRef}
-      width={width}
-      height={height}
       viewBox={`0 0 120 200`}
       xmlns="http://www.w3.org/2000/svg"
-      className="cursor-pointer"
+      className={`cursor-pointer w-15 h-15 md:w-20 md:h-20`}
     >
       <path d={boltPath} className="fill-indigo-400" filter="url(#shadow)" />
 
