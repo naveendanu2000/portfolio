@@ -5,6 +5,7 @@ import Button from "./micro-components/Button";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 const skills = [
   "greatness",
@@ -183,6 +184,16 @@ const Hero = () => {
     { scope: imgRef }
   );
 
+  const scroll = () => {
+    gsap.registerPlugin(ScrollToPlugin);
+
+    gsap.to("#projects-button", {
+      duration: 1.2,
+      scrollTo: { y: "#projects-section", offsetY: 10 },
+      ease: "power4.out",
+    });
+  };
+
   return (
     <div
       id="home"
@@ -202,7 +213,7 @@ const Hero = () => {
             <strong className="text-violet-400">driven</strong> web experiences.
           </h3>
           <div className="mt-5 -mx-3">
-            <a href="#projects-section">
+            <a id="projects-button" onClick={scroll}>
               <Button text="[View Projects]" />
             </a>
           </div>
