@@ -40,7 +40,7 @@ const Navbar = () => {
         shadow-md
         lg:w-fit"
     >
-      <Link text="Home" href="#home"/>
+      <Link text="Top" href="#home"/>
       <Link text="Projects" href="#projects-section"/>
       <Link text="Tech stack" href="#skills-section"/>
       <Link text="Socials" href="#footer"/>
