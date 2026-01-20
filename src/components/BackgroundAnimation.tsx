@@ -201,7 +201,7 @@ const BackgroundAnimation = () => {
         />
       </div>
       <div ref={issParentRef}>
-        <img ref={issRef} className={`h-30 absolute -left-200 top-0`} src={iss} />
+        <img ref={issRef} className={`h-30 absolute left-0 top-0`} src={iss} />
       </div>
     </div>
   );
