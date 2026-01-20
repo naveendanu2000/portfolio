@@ -33,7 +33,7 @@ const BackgroundAnimation = () => {
       opacity: dark ? 0 : 1,
     });
     gsap.set(meteorRef.current, {
-      scale: 0.2,
+      scale: window.innerWidth > 450 ? window.innerHeight/3000 : window.innerHeight/1000,
       rotate: -2,
       y: "-40%",
       x: "80%",
@@ -259,19 +259,19 @@ const BackgroundAnimation = () => {
           />
         ))}
       </div>
-      <div>
-        <img
-          ref={meteorRef}
-          src={meteors}
-          className={`absolute left-0 top-40 xl:-top-100`}
-        />
-      </div>
       <img ref={sunRef} src={sun} className={` h-60  absolute left-0 top-0`} />
       <div ref={moonParentRef}>
         <img
           ref={moonRef}
           src={moon}
           className={`h-40 absolute left-0 top-0`}
+        />
+      </div>
+      <div>
+        <img
+          ref={meteorRef}
+          src={meteors}
+          className={`absolute left-0 top-40 xl:-top-100`}
         />
       </div>
       <div ref={issParentRef}>
