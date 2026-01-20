@@ -62,7 +62,6 @@ const EducationSection = () => {
             imgSrc={education.imgSrc}
             schoolName={education.schoolName}
             certificate={education.certificate}
-            cgpa={education.cgpa}
             timeline={education.timeline}
             place={education.place}
           />

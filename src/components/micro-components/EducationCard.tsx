@@ -7,14 +7,12 @@ const EducationCard = ({
   imgSrc,
   schoolName,
   certificate,
-  cgpa,
   timeline,
   place,
 }: {
   imgSrc: string;
   schoolName: string;
   certificate: string;
-  cgpa: string;
   timeline: string;
   place: string;
 }) => {
@@ -49,7 +47,6 @@ const EducationCard = ({
         <div className="flex md:flex-row flex-col">
           <div className="flex-1">
             <h4 className="md:text-lg text-xs">{certificate}</h4>
-            <p className="md:text-md text-xs">{cgpa}</p>
           </div>
           <div className="flex-1 md:text-right">
             <h4 className="md:text-lg text-xs">{timeline}</h4>
