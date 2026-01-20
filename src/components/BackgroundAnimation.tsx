@@ -157,7 +157,7 @@ const BackgroundAnimation = () => {
         .fromTo(
           issParentRef.current,
           { x: 1000, y: 150 },
-          { x: 100 }
+          { x: 0 }
         );
     });
 
@@ -261,7 +261,7 @@ const BackgroundAnimation = () => {
       <div ref={issParentRef}>
         <img
           ref={issRef}
-          className={`xl:h-30 h-20 realtive left-0 top-0`}
+          className={`xl:h-30 h-20 absolute left-0 top-0`}
           src={iss}
         />
       </div>
