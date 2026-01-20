@@ -94,7 +94,23 @@ const BackgroundAnimation = () => {
 
     const mm = gsap.matchMedia();
 
-    mm.add("(max-width: 640px)", () => {
+    mm.add("(max-width: 440px)", () => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: document.body,
+            start: "bottom +300%",
+            end: "max",
+            scrub: true,
+          },
+        })
+        .fromTo(
+          issParentRef.current,
+          { x: 300, y: 100 },
+          { x: "-=300%" }
+        );
+    });
+    mm.add("(min-width: 441px) and (max-width: 640px)", () => {
       gsap
         .timeline({
           scrollTrigger: {
