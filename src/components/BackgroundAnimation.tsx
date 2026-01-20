@@ -167,7 +167,7 @@ const BackgroundAnimation = () => {
       scale: 1.5,
       y: "+=20%",
       x: "-=300%",
-      duration: 100,
+      duration: 200,
       ease: "power4.out",
       scrollTrigger: {
         trigger: document.body,
