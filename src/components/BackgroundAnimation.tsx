@@ -106,8 +106,8 @@ const BackgroundAnimation = () => {
         })
         .fromTo(
           issParentRef.current,
-          { x: 300, y: 100 },
-          { x: "-=300%" }
+          { x: 300, y: -100 },
+          { x: "-=320%" }
         );
     });
     mm.add("(min-width: 441px) and (max-width: 640px)", () => {
