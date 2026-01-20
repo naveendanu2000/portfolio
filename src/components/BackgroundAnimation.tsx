@@ -2,6 +2,8 @@
 import { useGSAP } from "@gsap/react";
 import sun from "/assets/background-images/sun.png";
 import moon from "/assets/background-images/moon.webp";
+import meteors from "/assets/background-images/meteors.webp";
+import iss from "/assets/background-images/iss.webp";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useContext, useRef, useEffect } from "react";
@@ -9,8 +11,11 @@ import { ThemeContext } from "../context/Theme";
 
 const BackgroundAnimation = () => {
   const moonRef = useRef<HTMLImageElement>(null);
+  const meteorRef = useRef<HTMLImageElement>(null);
+  const issRef = useRef<HTMLImageElement>(null);
   const moonParentRef = useRef<HTMLImageElement>(null);
   const sunRef = useRef<HTMLImageElement>(null);
+  const issParentRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const starsRef = useRef<HTMLDivElement>(null);
   const count = 600;
@@ -26,6 +31,17 @@ const BackgroundAnimation = () => {
       x: -200,
       y: -200,
       opacity: dark ? 0 : 1,
+    });
+    gsap.set(meteorRef.current, {
+      scale: 0.2,
+      rotate: -2,
+      y: "-40%",
+      x: "80%",
+    });
+    gsap.set(issRef.current, {
+      scale: 1,
+      y: "500",
+      x: "1000%",
     });
   }, []);
 
@@ -67,6 +83,40 @@ const BackgroundAnimation = () => {
         scrub: true,
       },
     });
+
+    gsap.to(meteorRef.current, {
+      x: "-80%",
+      y: "30%",
+      duration: 100,
+      scale: 0.001,
+      ease: "power4.out",
+    });
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: document.body,
+          start: "bottom +300%",
+          end: "max",
+        },
+      })
+      .fromTo(
+        issParentRef.current,
+        {
+          x: 300,
+          y: 150,
+        },
+        { x: 100 }
+      )
+      .to(issRef.current, {
+        rotateZ: 40,
+        rotateY: -5,
+        scale: 1.5,
+        y: "+=150",
+        x: "-=300%",
+        duration: 100,
+        ease: "power4.out",
+      });
   }, []);
 
   const tl = useRef<gsap.core.Timeline | null>(null);
@@ -135,6 +185,13 @@ const BackgroundAnimation = () => {
           />
         ))}
       </div>
+      <div>
+        <img
+          ref={meteorRef}
+          src={meteors}
+          className={`absolute left-0 -top-100`}
+        />
+      </div>
       <img ref={sunRef} src={sun} className={` h-60  absolute left-0 top-0`} />
       <div ref={moonParentRef}>
         <img
@@ -142,6 +199,9 @@ const BackgroundAnimation = () => {
           src={moon}
           className={`h-40 absolute left-0 top-0`}
         />
+      </div>
+      <div ref={issParentRef}>
+        <img ref={issRef} className={`h-30 absolute -left-200 top-0`} src={iss} />
       </div>
     </div>
   );
