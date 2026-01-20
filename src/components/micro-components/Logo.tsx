@@ -47,9 +47,8 @@ export default function Logo() {
         height: 15,
         duration: 2,
         repeat: -1,
-        delay: 0.3,
         yoyoEase: "power3.out",
-        repeatDelay: 2,
+        repeatDelay: 0.2,
         ease: "power2.inOut",
       }
     );
