@@ -40,7 +40,7 @@ const BackgroundAnimation = () => {
       scrollTrigger: {
         trigger: document.body,
         start: "top top",
-        end: "+=500%",
+        end: "max",
         scrub: true,
       },
     });
@@ -51,7 +51,7 @@ const BackgroundAnimation = () => {
       scrollTrigger: {
         trigger: document.body,
         start: "top top",
-        end: "+=600%",
+        end: "max",
         scrub: true,
       },
     });
@@ -63,7 +63,7 @@ const BackgroundAnimation = () => {
       scrollTrigger: {
         trigger: document.body,
         start: "top top",
-        end: "+=600%",
+        end: "max",
         scrub: true,
       },
     });
