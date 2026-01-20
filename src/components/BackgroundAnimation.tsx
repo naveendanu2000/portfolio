@@ -92,31 +92,89 @@ const BackgroundAnimation = () => {
       ease: "power4.out",
     });
 
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: document.body,
-          start: "bottom +300%",
-          end: "max",
-        },
-      })
-      .fromTo(
-        issParentRef.current,
-        {
-          x: 300,
-          y: 150,
-        },
-        { x: 100 }
-      )
-      .to(issRef.current, {
-        rotateZ: 40,
-        rotateY: -5,
-        scale: 1.5,
-        y: "+=150",
-        x: "-=300%",
-        duration: 100,
-        ease: "power4.out",
-      });
+    const mm = gsap.matchMedia();
+
+    mm.add("(max-width: 640px)", () => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: document.body,
+            start: "bottom +300%",
+            end: "max",
+            scrub: true,
+          },
+        })
+        .fromTo(
+          issParentRef.current,
+          { x: 300, y: 150 },
+          { x: "-=280%" }
+        );
+    });
+
+    mm.add("(min-width: 641px) and (max-width: 821px)", () => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: document.body,
+            start: "bottom +300%",
+            end: "max",
+            scrub: true,
+          },
+        })
+        .fromTo(
+          issParentRef.current,
+          { x: 1000, y: "450%" },
+          { x: "-70%" }
+        );
+    });
+    mm.add("(min-width: 822px) and (max-width: 1365px)", () => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: document.body,
+            start: "bottom +300%",
+            end: "max",
+            scrub: true,
+          },
+        })
+        .fromTo(
+          issParentRef.current,
+          { x: 1000, y: "750%" },
+          { x: "-40%" }
+        );
+    });
+
+    mm.add("(min-width: 1366px)", () => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: document.body,
+            start: "bottom +300%",
+            end: "max",
+            scrub: true,
+          },
+        })
+        .fromTo(
+          issParentRef.current,
+          { x: 1000, y: 150 },
+          { x: 100 }
+        );
+    });
+
+    gsap.to(issRef.current, {
+      rotateZ: 40,
+      rotateY: -5,
+      scale: 1.5,
+      y: "+=20%",
+      x: "-=300%",
+      duration: 100,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: document.body,
+        start: "bottom +300%",
+        end: "max",
+      },
+    });
   }, []);
 
   const tl = useRef<gsap.core.Timeline | null>(null);
@@ -189,7 +247,7 @@ const BackgroundAnimation = () => {
         <img
           ref={meteorRef}
           src={meteors}
-          className={`absolute left-0 -top-100`}
+          className={`absolute left-0 top-40 xl:-top-100`}
         />
       </div>
       <img ref={sunRef} src={sun} className={` h-60  absolute left-0 top-0`} />
@@ -201,7 +259,11 @@ const BackgroundAnimation = () => {
         />
       </div>
       <div ref={issParentRef}>
-        <img ref={issRef} className={`h-30 absolute left-0 top-0`} src={iss} />
+        <img
+          ref={issRef}
+          className={`xl:h-30 h-20 realtive left-0 top-0`}
+          src={iss}
+        />
       </div>
     </div>
   );
