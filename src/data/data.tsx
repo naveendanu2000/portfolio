@@ -20,7 +20,7 @@ export const experienceCard = [
     ],
   },
   {
-    imgSrc: "/portfolio/assets/ID-Cards/id_accenture.png",
+    imgSrc: "/portfolio/assets/ID-Cards/id_babvip.png",
     companyName: "BABVIP",
     timeline: "Sep, 24 - Oct, 25",
     description: [
