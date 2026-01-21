@@ -23,14 +23,16 @@ const BackgroundAnimation = () => {
 
   useGSAP(() => {
     gsap.set(moonRef.current, {
-      x: dark ? -40 : -200,
-      y: dark ? 0 : -200,
-      opacity: dark ? 1 : 0,
+      x: -40,
+      y: 0,
+    });
+    gsap.set(moonParentRef.current, {
+      x: 0,
+      y: 0,
     });
     gsap.set(sunRef.current, {
-      x: dark ? -200 : -180,
-      y: dark ? -200 : -120,
-      opacity: dark ? 0 : 1,
+      x: -200,
+      y: -200,
     });
   });
 
@@ -211,6 +213,20 @@ const BackgroundAnimation = () => {
 
     tl.current.progress(dark ? 0 : 1).pause();
   }, []);
+
+  useGSAP(
+    () => {
+      gsap.to(moonParentRef.current, {
+        opacity: dark ? 1 : 0,
+        delay: 0.65,
+      });
+      gsap.to(sunRef.current, {
+        opacity: dark ? 0 : 1,
+        delay: 0.65,
+      });
+    },
+    { dependencies: [dark] },
+  );
 
   useEffect(() => {
     if (!tl.current) return;
