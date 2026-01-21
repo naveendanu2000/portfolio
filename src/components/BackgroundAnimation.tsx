@@ -43,7 +43,7 @@ const BackgroundAnimation = () => {
       y: "500",
       x: "1000%",
     });
-  }, [dark]);
+  }, []);
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
