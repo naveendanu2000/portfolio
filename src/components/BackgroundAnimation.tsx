@@ -31,8 +31,8 @@ const BackgroundAnimation = () => {
       y: 0,
     });
     gsap.set(sunRef.current, {
-      x: -200,
-      y: -200,
+      x: -300,
+      y: -300,
     });
   });
 
@@ -191,8 +191,8 @@ const BackgroundAnimation = () => {
     tl.current
       .timeScale(1.2)
       .to(moonParentRef.current, {
-        x: -200,
-        y: -200,
+        x: -300,
+        y: -300,
         opacity: 0,
         duration: 0.65,
         ease: "power4.in",
@@ -218,7 +218,7 @@ const BackgroundAnimation = () => {
     () => {
       gsap.to(moonParentRef.current, {
         opacity: dark ? 1 : 0,
-        delay: 0.65,
+        delay: 2.65,
       });
       gsap.to(sunRef.current, {
         opacity: dark ? 0 : 1,
