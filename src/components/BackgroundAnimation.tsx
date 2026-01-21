@@ -87,7 +87,7 @@ const BackgroundAnimation = () => {
     gsap.to(meteorRef.current, {
       x: "-80%",
       y: "30%",
-      duration: 100,
+      duration: 200,
       scale: 0.001,
       ease: "power4.out",
     });
