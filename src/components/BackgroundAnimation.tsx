@@ -23,17 +23,23 @@ const BackgroundAnimation = () => {
 
   useGSAP(() => {
     gsap.set(moonRef.current, {
-      x: -40,
-      y: 0,
+      x: dark ? -40 : -200,
+      y: dark ? 0 : -200,
       opacity: dark ? 1 : 0,
     });
     gsap.set(sunRef.current, {
-      x: -200,
-      y: -200,
+      x: dark ? -200 : -180,
+      y: dark ? -200 : -120,
       opacity: dark ? 0 : 1,
     });
+  });
+
+  useGSAP(() => {
     gsap.set(meteorRef.current, {
-      scale: window.innerWidth > 450 ? window.innerHeight/3000 : window.innerHeight/1000,
+      scale:
+        window.innerWidth > 450
+          ? window.innerHeight / 3000
+          : window.innerHeight / 1000,
       rotate: -2,
       y: "-40%",
       x: "80%",
@@ -43,7 +49,7 @@ const BackgroundAnimation = () => {
       y: "500",
       x: "1000%",
     });
-  }, []);
+  });
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -104,11 +110,7 @@ const BackgroundAnimation = () => {
             scrub: true,
           },
         })
-        .fromTo(
-          issParentRef.current,
-          { x: 300, y: -100 },
-          { x: "-=320%" }
-        );
+        .fromTo(issParentRef.current, { x: 300, y: -100 }, { x: "-=320%" });
     });
     mm.add("(min-width: 441px) and (max-width: 640px)", () => {
       gsap
@@ -120,11 +122,7 @@ const BackgroundAnimation = () => {
             scrub: true,
           },
         })
-        .fromTo(
-          issParentRef.current,
-          { x: 300, y: 150 },
-          { x: "-=280%" }
-        );
+        .fromTo(issParentRef.current, { x: 300, y: 150 }, { x: "-=280%" });
     });
 
     mm.add("(min-width: 641px) and (max-width: 821px)", () => {
@@ -137,11 +135,7 @@ const BackgroundAnimation = () => {
             scrub: true,
           },
         })
-        .fromTo(
-          issParentRef.current,
-          { x: 1000, y: "450%" },
-          { x: "-70%" }
-        );
+        .fromTo(issParentRef.current, { x: 1000, y: "450%" }, { x: "-70%" });
     });
     mm.add("(min-width: 822px) and (max-width: 1365px)", () => {
       gsap
@@ -153,11 +147,7 @@ const BackgroundAnimation = () => {
             scrub: true,
           },
         })
-        .fromTo(
-          issParentRef.current,
-          { x: 1000, y: "750%" },
-          { x: "-40%" }
-        );
+        .fromTo(issParentRef.current, { x: 1000, y: "750%" }, { x: "-40%" });
     });
 
     mm.add("(min-width: 1366px)", () => {
@@ -170,11 +160,7 @@ const BackgroundAnimation = () => {
             scrub: true,
           },
         })
-        .fromTo(
-          issParentRef.current,
-          { x: 1000, y: 150 },
-          { x: 0 }
-        );
+        .fromTo(issParentRef.current, { x: 1000, y: 150 }, { x: 0 });
     });
 
     gsap.to(issRef.current, {
@@ -222,6 +208,8 @@ const BackgroundAnimation = () => {
         duration: 0.65,
         ease: "power4.out",
       });
+
+    tl.current.progress(dark ? 0 : 1).pause();
   }, []);
 
   useEffect(() => {
